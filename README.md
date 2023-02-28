@@ -4,10 +4,9 @@ Welcome to CM-SS14 a colonial marines inspired remake of the original CM-SS13 ru
 
 This is the primary repo for CM-SS14 and contains everything you need to use to run you own server.
 
+## Links
 
-<!-- ## Links -->
-
-<!-- [Website](https://spacestation14.io/) | [Discord](https://discord.ss14.io/) | [Forum](https://forum.spacestation14.io/) | [Steam](https://store.steampowered.com/app/1255460/Space_Station_14/) | [Standalone Download](https://spacestation14.io/about/nightlies/) -->
+| [Discord](https://discord.gg/49KeKwXc8g) |
 
 <!-- ## Documentation/Wiki -->
 
@@ -17,7 +16,7 @@ This is the primary repo for CM-SS14 and contains everything you need to use to 
 
 We are happy to accept contributions from anybody. Get in Discord if you want to help. We've got a [list of issues](https://github.com/Park-Station/CM-SS14/issues) that need to be done and anybody can pick them up. Don't be afraid to ask for help either!
 
-Refer to [the space wizards guide](https://docs.spacestation14.io/getting-started/dev-setup) for general information about setting up a dev environment but keep in mind that Parkstation is a distant fork of space wizards' SS14 and not everything applies. We provide some scripts for making the job easier.
+Refer to [the space wizards guide](https://docs.spacestation14.io/getting-started/dev-setup) for general information about setting up a dev environment but keep in mind that CM-SS14 is a distant fork of space wizards' SS14 and not everything applies. We provide some scripts for making the job easier.
 
 ## Building
 
