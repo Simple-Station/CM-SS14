@@ -4,10 +4,9 @@ Welcome to CM-SS14 a colonial marines inspired remake of the original CM-SS13 ru
 
 This is the primary repo for CM-SS14 and contains everything you need to use to run you own server.
 
+## Links
 
-<!-- ## Links -->
-
-<!-- [Website](https://spacestation14.io/) | [Discord](https://discord.ss14.io/) | [Forum](https://forum.spacestation14.io/) | [Steam](https://store.steampowered.com/app/1255460/Space_Station_14/) | [Standalone Download](https://spacestation14.io/about/nightlies/) -->
+| [Discord](https://discord.gg/49KeKwXc8g) |
 
 <!-- ## Documentation/Wiki -->
 
