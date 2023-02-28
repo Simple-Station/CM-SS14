@@ -1,6 +1,6 @@
 <p align="center"> <img alt="Space Station 14" width="880" height="300" src="https://raw.githubusercontent.com/space-wizards/asset-dump/de329a7898bb716b9d5ba9a0cd07f38e61f1ed05/github-logo.svg" /></p>
 
-Welcome to CM-SS14 a clonial marines inspired remake of the original CM-SS13 running on [Robust Toolbox](https://github.com/space-wizards/RobustToolbox).
+Welcome to CM-SS14 a colonial marines inspired remake of the original CM-SS13 running on [Robust Toolbox](https://github.com/space-wizards/RobustToolbox).
 
 This is the primary repo for CM-SS14 and contains everything you need to use to run you own server.
 
