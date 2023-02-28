@@ -109,3 +109,22 @@
     stripTimeReduction: 9999
     stealthy: true
   - type: Stripping
+  - type: Sprite
+    overrideContainerOcclusion: true # Ghosts always show up regardless of where they're contained.
+    netsync: false
+    noRot: true
+    drawdepth: Ghosts
+    sprite: SimpleStation14/Mobs/Ghosts/ghost_admin.rsi
+    state: animated
+    color: "#888888"
+    layers:
+      - state: animated
+        shader: unshaded
+  # - type: PointLight
+  #   radius: 4.5
+  #   energy: 1.25
+  - type: BibleUser
+  - type: SpellbookUser1
+  - type: SpellbookUser2
+  - type: Inventory
+    templateId: aghost
