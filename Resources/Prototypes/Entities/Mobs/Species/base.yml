@@ -116,6 +116,9 @@
         sprite: Mobs/Customization/masking_helpers.rsi
         state: female_full
         visible: false
+      - map: [ "underpants" ]
+      - map: [ "undershirt" ]
+      - map: [ "socks" ]
       - map: [ "jumpsuit" ]
       - map: [ "enum.HumanoidVisualLayers.LHand" ]
       - map: [ "enum.HumanoidVisualLayers.RHand" ]
@@ -338,6 +341,9 @@
           sprite: Mobs/Customization/masking_helpers.rsi
           state: female_full
           visible: false
+        - map: [ "underpants" ]
+        - map: [ "undershirt" ]
+        - map: [ "socks" ]
         - map: [ "jumpsuit" ]
         - map: [ "enum.HumanoidVisualLayers.LHand" ]
         - map: [ "enum.HumanoidVisualLayers.RHand" ]
