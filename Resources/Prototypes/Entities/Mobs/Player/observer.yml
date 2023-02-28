@@ -56,3 +56,4 @@
     baseSprintSpeed: 8
     baseWalkSpeed: 5
   - type: MovementIgnoreGravity
+  - type: Pullable
