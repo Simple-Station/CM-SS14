@@ -1,0 +1,40 @@
+- type: entity
+  parent: BaseWall
+  id: WallAlamayer
+  name: wall-cm-almayer
+  components:
+  - type: Tag
+    tags:
+      - Wall
+      - RCDDeconstructWhitelist
+  - type: Sprite
+    sprite: CM-SS14/Structures/Walls/almayer.rsi
+  - type: Construction
+    graph: Girder
+    node: wall
+  - type: Icon
+    sprite: CM-SS14/Structures/Walls/almayer.rsi
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 600 # #excess damage (nuke?). avoid computational cost of spawning entities.
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+    - trigger:
+        !type:DamageTrigger
+        damage: 300
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/Effects/metalbreak.ogg
+      - !type:ChangeConstructionNodeBehavior
+        node: girder
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+    destroySound:
+      path: /Audio/Effects/metalbreak.ogg
+  - type: IconSmooth
+    key: walls
+    base: testwall
