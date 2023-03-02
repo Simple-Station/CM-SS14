@@ -1,0 +1,149 @@
+- type: tile
+  id: AlmayerSteel
+  name: tile-cm-almayer-steel
+  sprite: /Textures/CM-SS14/Tiles/almayer_steel.png
+  baseTurfs:
+  - Plating
+  isSubfloor: false
+  canCrowbar: true
+  footstepSounds:
+    collection: FootstepFloor
+  friction: 0.30
+  itemDrop: FloorTileItemSteel
+  thermalConductivity: 0.04
+  heatCapacity: 10000
+
+- type: tile
+  id: almayer_plate_darker
+  name: tile-cm-almayer-plate-darker
+  sprite: /Textures/CM-SS14/Tiles/almayer_plate_darker.png
+  baseTurfs:
+  - Plating
+  isSubfloor: false
+  canCrowbar: true
+  footstepSounds:
+    collection: FootstepFloor
+  friction: 0.30
+  itemDrop: FloorTileItemSteel
+  thermalConductivity: 0.04
+  heatCapacity: 10000
+
+- type: tile
+  id: almayer_sterile_green
+  name: tile-cm-almayer-sterile-green
+  sprite: /Textures/CM-SS14/Tiles/almayer_sterile_green.png
+  baseTurfs:
+  - Plating
+  isSubfloor: false
+  canCrowbar: true
+  footstepSounds:
+    collection: FootstepFloor
+  friction: 0.30
+  itemDrop: FloorTileItemSteel
+  thermalConductivity: 0.04
+  heatCapacity: 10000
+
+- type: tile
+  id: almayer_white_sterile
+  name: tile-cm-almayer-white-sterile
+  sprite: /Textures/CM-SS14/Tiles/almayer_white_sterile.png
+  baseTurfs:
+  - Plating
+  isSubfloor: false
+  canCrowbar: true
+  footstepSounds:
+    collection: FootstepFloor
+  friction: 0.30
+  itemDrop: FloorTileItemSteel
+  thermalConductivity: 0.04
+  heatCapacity: 10000
+
+- type: tile
+  id: wood_almayer
+  name: tile-cm-almayer-wood
+  sprite: /Textures/CM-SS14/Tiles/almayer_wood.png
+  baseTurfs:
+  - Plating
+  isSubfloor: false
+  canCrowbar: true
+  footstepSounds:
+    collection: FootstepFloor
+  friction: 0.30
+  itemDrop: FloorTileItemSteel
+  thermalConductivity: 0.04
+  heatCapacity: 10000
+
+- type: tile
+  id: almayer_ai_floors
+  name: tile-cm-almayer-ai-floors
+  sprite: /Textures/CM-SS14/Tiles/almayer_ai_floors.png
+  baseTurfs:
+  - Plating
+  isSubfloor: false
+  canCrowbar: true
+  footstepSounds:
+    collection: FootstepFloor
+  friction: 0.30
+  itemDrop: FloorTileItemSteel
+  thermalConductivity: 0.04
+  heatCapacity: 10000
+
+- type: tile
+  id: outerhull_almayer
+  name: tile-cm-almayer-outerhull
+  sprite: /Textures/CM-SS14/Tiles/almayer_outerhull.png
+  baseTurfs:
+  - Plating
+  isSubfloor: false
+  canCrowbar: true
+  footstepSounds:
+    collection: FootstepFloor
+  friction: 0.30
+  itemDrop: FloorTileItemSteel
+  thermalConductivity: 0.04
+  heatCapacity: 10000
+
+- type: tile
+  id: plating_almayer
+  name: tile-cm-almayer-plating
+  sprite: /Textures/CM-SS14/Tiles/almayer_plating.png
+  baseTurfs:
+  - Plating
+  isSubfloor: false
+  canCrowbar: true
+  footstepSounds:
+    collection: FootstepFloor
+  friction: 0.30
+  itemDrop: FloorTileItemSteel
+  thermalConductivity: 0.04
+  heatCapacity: 10000
+
+- type: tile
+  id: plate_almayer
+  name: tile-cm-almayer-plate
+  sprite: /Textures/CM-SS14/Tiles/almayer_plate.png
+  baseTurfs:
+  - Plating
+  isSubfloor: false
+  canCrowbar: true
+  footstepSounds:
+    collection: FootstepFloor
+  friction: 0.30
+  itemDrop: FloorTileItemSteel
+  thermalConductivity: 0.04
+  heatCapacity: 10000
+
+- type: tile
+  id: sterile_almayer
+  name: tile-cm-almayer-sterile
+  sprite: /Textures/CM-SS14/Tiles/almayer_sterile.png
+  baseTurfs:
+  - Plating
+  isSubfloor: false
+  canCrowbar: true
+  footstepSounds:
+    collection: FootstepFloor
+  friction: 0.30
+  itemDrop: FloorTileItemSteel
+  thermalConductivity: 0.04
+  heatCapacity: 10000
