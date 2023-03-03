@@ -47,8 +47,15 @@ namespace Content.Shared.VendingMachines
         public bool DispenseOnHitCoolingDown;
 
         public string? NextItemToEject;
+        public EntityUid? NextEntityToEjectTo;
 
         public bool Broken;
+
+        /// <summary>
+        /// When true, will automatically equip dispensed items
+        /// </summary>
+        [DataField("equipOnEject")]
+        public bool EquipOnEject = false;
 
         /// <summary>
         /// When true, will forcefully throw any object it dispenses
