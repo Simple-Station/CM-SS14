@@ -20,6 +20,9 @@ using Robust.Server.GameObjects;
 using Robust.Shared.Audio;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
+using Content.Shared.Inventory;
+using Content.Shared.Hands.Components;
+using Content.Shared.Clothing.Components;
 
 namespace Content.Server.VendingMachines
 {
@@ -35,6 +38,7 @@ namespace Content.Server.VendingMachines
         [Dependency] private readonly PricingSystem _pricing = default!;
         [Dependency] private readonly ThrowingSystem _throwingSystem = default!;
         [Dependency] private readonly UserInterfaceSystem _userInterfaceSystem = default!;
+        [Dependency] private readonly InventorySystem _inventorySystem = default!;
 
         private ISawmill _sawmill = default!;
 
@@ -236,7 +240,7 @@ namespace Content.Server.VendingMachines
         /// <param name="type">The type of inventory the item is from</param>
         /// <param name="itemId">The prototype ID of the item</param>
         /// <param name="throwItem">Whether the item should be thrown in a random direction after ejection</param>
-        public void TryEjectVendorItem(EntityUid uid, InventoryType type, string itemId, bool throwItem, VendingMachineComponent? vendComponent = null)
+        public void TryEjectVendorItem(EntityUid uid, InventoryType type, string itemId, bool throwItem, VendingMachineComponent? vendComponent = null, EntityUid? sender = null)
         {
             if (!Resolve(uid, ref vendComponent))
                 return;
@@ -272,6 +276,7 @@ namespace Content.Server.VendingMachines
             vendComponent.Ejecting = true;
             vendComponent.NextItemToEject = entry.ID;
             vendComponent.ThrowNextItem = throwItem;
+            vendComponent.NextEntityToEjectTo = sender;
             entry.Amount--;
             UpdateVendingMachineInterfaceState(vendComponent);
             TryUpdateVisualState(uid, vendComponent);
@@ -288,7 +293,7 @@ namespace Content.Server.VendingMachines
         {
             if (IsAuthorized(uid, sender, component))
             {
-                TryEjectVendorItem(uid, type, itemId, component.CanShoot, component);
+                TryEjectVendorItem(uid, type, itemId, component.CanShoot, component, sender);
             }
         }
 
@@ -373,6 +378,25 @@ namespace Content.Server.VendingMachines
                 var range = vendComponent.NonLimitedEjectRange;
                 var direction = new Vector2(_random.NextFloat(-range, range), _random.NextFloat(-range, range));
                 _throwingSystem.TryThrow(ent, direction, vendComponent.NonLimitedEjectForce);
+            }
+            else if (vendComponent.NextEntityToEjectTo != null && vendComponent.EquipOnEject &&
+                EntityManager.TryGetComponent<SharedHandsComponent>(vendComponent.NextEntityToEjectTo, out var hands))
+            {
+                var uid = vendComponent.NextEntityToEjectTo;
+                var slot = "";
+
+                if (EntityManager.TryGetComponent<ClothingComponent>(ent, out var clothingComp))
+                {
+                    if (_inventorySystem.TryGetSlots(uid.Value, out var slotDefinitions) && slotDefinitions != null)
+                    {
+                        foreach (var slotCur in slotDefinitions)
+                        {
+                            if (!clothingComp.Slots.HasFlag(slotCur.SlotFlags)) continue;
+                            slot = slotCur.Name;
+                        }
+                    }
+                }
+                _inventorySystem.TryEquip(uid.Value, ent, slot);
             }
 
             vendComponent.NextItemToEject = null;
