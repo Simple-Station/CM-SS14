@@ -1,25 +1,25 @@
 [game]
-hostname = "[NA East][MRP] Parkstation"
-desc = "A server focused on RP expectations and calmer rounds, looking to build player base at the moment."
-maxplayers = 64
-soft_max_players = 48
+hostname = "[NA East][MRP] CM-SS14"
+desc = "A Colonial Marines inspired Space Station 14 server."
+maxplayers = 32
+soft_max_players = 16
 type = 1
 lobbyenabled = false
 lobbyduration = 180
 role_timers = false
 fallbackpreset = "extended"
-map_pool = "ParkMapPool"
+map_pool = "DefaultMapPool"
 
 [server]
-rules_file = "Park_Rules.txt"
+rules_file = "CM_Rules.txt"
 id = "parkstation"
 
 [whitelist]
 min_players = 32
 
 [rules]
-rules.time = 60
-rules.exempt_local = false
+rules_time = 60
+rules_exempt_local = false
 
 [events]
 ramping_average_end_time = 120.0
