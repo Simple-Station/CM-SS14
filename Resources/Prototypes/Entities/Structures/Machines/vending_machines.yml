@@ -1400,6 +1400,7 @@
   description: A highly advanced vending machine for buying cargo related clothing for free.
   components:
   - type: VendingMachine
+    equipOnEject: true
     pack: CargoDrobeInventory
     offState: off
     brokenState: broken
