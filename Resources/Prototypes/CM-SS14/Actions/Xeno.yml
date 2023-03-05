@@ -1,0 +1,7 @@
+- type: instantAction
+  id: XenoRestAction
+  icon: Interface/Actions/web.png
+  name: xeno-action-rest-name
+  description: xeno-action-rest-description
+  serverEvent: !type:XenoRestActionEvent
+  useDelay: 20
