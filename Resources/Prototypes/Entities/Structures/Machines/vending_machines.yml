@@ -73,6 +73,9 @@
     price: 200
   - type: Appearance
   - type: WiresVisuals
+  # Remove once there are machines for it.
+  - type: VendingMachine
+    equipOnEject: true
 
 - type: entity
   parent: VendingMachine
