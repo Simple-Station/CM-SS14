@@ -12,7 +12,7 @@
   - type: InteractionOutline
   - type: Sprite
     netsync: false
-    sprite: Structures/Doors/Airlocks/Standard/basic.rsi
+    sprite: Structures/Doors/Airlocks/Standard/celldoor.rsi
     snapCardinals: false
     layers:
     - state: closed

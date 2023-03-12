@@ -1,34 +1,18 @@
 - type: entity
   parent: Airlock
-  id: AirlockFreezer
-  suffix: Freezer
+  id: AirlockCommand
+  suffix: Command
   components:
   - type: Sprite
-    sprite: Structures/Doors/Airlocks/Standard/freezer.rsi
+    sprite: Structures/Doors/Airlocks/Standard/command.rsi
 
 - type: entity
   parent: Airlock
-  id: AirlockEngineering
-  suffix: Engineering
+  id: AirlockPersonal
+  suffix: Personal
   components:
   - type: Sprite
-    sprite: Structures/Doors/Airlocks/Standard/engineering.rsi
-
-- type: entity
-  parent: Airlock
-  id: AirlockAtmospherics
-  suffix: Atmospherics
-  components:
-  - type: Sprite
-    sprite: Structures/Doors/Airlocks/Standard/atmospherics.rsi
-
-- type: entity
-  parent: Airlock
-  id: AirlockCargo
-  suffix: Cargo
-  components:
-  - type: Sprite
-    sprite: Structures/Doors/Airlocks/Standard/cargo.rsi
+    sprite: Structures/Doors/Airlocks/Standard/personal.rsi
 
 - type: entity
   parent: Airlock
@@ -40,35 +24,19 @@
 
 - type: entity
   parent: Airlock
-  id: AirlockVirology
-  suffix: Virology
+  id: AirlockPod
+  suffix: Pod
   components:
   - type: Sprite
-    sprite: Structures/Doors/Airlocks/Standard/virology.rsi
+    sprite: Structures/Doors/Airlocks/Standard/pod_door.rsi
 
 - type: entity
   parent: Airlock
-  id: AirlockChemistry
-  suffix: Chemistry
+  id: AirlockMaintenance
+  suffix: Maintenance
   components:
   - type: Sprite
-    sprite: Structures/Doors/Airlocks/Standard/medical.rsi
-
-- type: entity
-  parent: Airlock
-  id: AirlockScience
-  suffix: Science
-  components:
-  - type: Sprite
-    sprite: Structures/Doors/Airlocks/Standard/science.rsi
-
-- type: entity
-  parent: Airlock
-  id: AirlockCommand
-  suffix: Command
-  components:
-  - type: Sprite
-    sprite: Structures/Doors/Airlocks/Standard/command.rsi
+    sprite: Structures/Doors/Airlocks/Standard/maint.rsi
 
 - type: entity
   parent: Airlock
@@ -80,11 +48,19 @@
 
 - type: entity
   parent: Airlock
-  id: AirlockMaint
-  name: maintenance hatch
+  id: AirlockEngineering
+  suffix: Engineering
   components:
   - type: Sprite
-    sprite: Structures/Doors/Airlocks/Standard/maint.rsi
+    sprite: Structures/Doors/Airlocks/Standard/engineering.rsi
+
+- type: entity
+  parent: Airlock
+  id: AirlockCell
+  suffix: Cell
+  components:
+  - type: Sprite
+    sprite: Structures/Doors/Airlocks/Standard/celldoor.rsi
 
 # Glass
 
@@ -92,6 +68,7 @@
   id: AirlockGlass
   parent: Airlock
   name: glass airlock
+  abstract: true
   components:
   - type: MeleeSound
     soundGroups:
@@ -103,7 +80,7 @@
   - type: Occluder
     enabled: false
   - type: Sprite
-    sprite: Structures/Doors/Airlocks/Glass/glass.rsi
+    sprite: Structures/Doors/Airlocks/Glass/alpha_prep.rsi
   - type: AnimationPlayer
   - type: Fixtures
     fixtures:
@@ -128,90 +105,81 @@
 
 - type: entity
   parent: AirlockGlass
-  id: AirlockEngineeringGlass
+  id: AirlockGlassAlpha
+  suffix: AlphaTeam
+  components:
+  - type: Sprite
+    sprite: Structures/Doors/Airlocks/Glass/alpha_prep.rsi
+  - type: PaintableAirlock
+    group: Glass
+
+- type: entity
+  parent: AirlockGlass
+  id: AirlockGlassBravo
+  suffix: BravoTeam
+  components:
+  - type: Sprite
+    sprite: Structures/Doors/Airlocks/Glass/charlie_prep.rsi
+  - type: PaintableAirlock
+    group: Glass
+
+- type: entity
+  parent: AirlockGlass
+  id: AirlockGlassCharlie
+  suffix: CharlieTeam
+  components:
+  - type: Sprite
+    sprite: Structures/Doors/Airlocks/Glass/bravo_prep.rsi
+  - type: PaintableAirlock
+    group: Glass
+
+- type: entity
+  parent: AirlockGlass
+  id: AirlockGlassDelta
+  suffix: DeltaTeam
+  components:
+  - type: Sprite
+    sprite: Structures/Doors/Airlocks/Glass/delta_prep.rsi
+  - type: PaintableAirlock
+    group: Glass
+
+- type: entity
+  parent: AirlockGlass
+  id: AirlockGlassEngineering
   suffix: Engineering
   components:
   - type: Sprite
-    sprite: Structures/Doors/Airlocks/Glass/engineering.rsi
+    sprite: Structures/Doors/Airlocks/Glass/engi_glass.rsi
   - type: PaintableAirlock
     group: Glass
 
 - type: entity
   parent: AirlockGlass
-  id: AirlockMaintGlass
-  suffix: Maintenance
-  components:
-  - type: Sprite
-    sprite: Structures/Doors/Airlocks/Glass/maint.rsi
-  - type: PaintableAirlock
-    group: Glass
-
-- type: entity
-  parent: AirlockGlass
-  id: AirlockAtmosphericsGlass
-  suffix: Atmospherics
-  components:
-  - type: Sprite
-    sprite: Structures/Doors/Airlocks/Glass/atmospherics.rsi
-  - type: PaintableAirlock
-    group: Glass
-
-- type: entity
-  parent: AirlockGlass
-  id: AirlockCargoGlass
-  suffix: Cargo
-  components:
-  - type: Sprite
-    sprite: Structures/Doors/Airlocks/Glass/cargo.rsi
-  - type: PaintableAirlock
-    group: Glass
-
-- type: entity
-  parent: AirlockGlass
-  id: AirlockMedicalGlass
-  suffix: Medical
-  components:
-  - type: Sprite
-    sprite: Structures/Doors/Airlocks/Glass/medical.rsi
-  - type: PaintableAirlock
-    group: Glass
-
-- type: entity
-  parent: AirlockGlass
-  id: AirlockVirologyGlass
-  suffix: Virology
-  components:
-  - type: Sprite
-    sprite: Structures/Doors/Airlocks/Glass/virology.rsi
-  - type: PaintableAirlock
-    group: Glass
-
-- type: entity
-  parent: AirlockGlass
-  id: AirlockScienceGlass
-  suffix: Science
-  components:
-  - type: Sprite
-    sprite: Structures/Doors/Airlocks/Glass/science.rsi
-  - type: PaintableAirlock
-    group: Glass
-
-- type: entity
-  parent: AirlockGlass
-  id: AirlockCommandGlass
-  suffix: Command
-  components:
-  - type: Sprite
-    sprite: Structures/Doors/Airlocks/Glass/command.rsi
-  - type: PaintableAirlock
-    group: Glass
-
-- type: entity
-  parent: AirlockGlass
-  id: AirlockSecurityGlass
+  id: AirlockGlassSecurity
   suffix: Security
   components:
   - type: Sprite
-    sprite: Structures/Doors/Airlocks/Glass/security.rsi
+    sprite: Structures/Doors/Airlocks/Glass/security_glass.rsi
   - type: PaintableAirlock
     group: Glass
+
+- type: entity
+  parent: AirlockGlass
+  id: AirlockGlassPersonal
+  suffix: Personal
+  components:
+  - type: Sprite
+    sprite: Structures/Doors/Airlocks/Glass/personal_glass.rsi
+  - type: PaintableAirlock
+    group: Glass
+
+- type: entity
+  parent: AirlockGlass
+  id: AirlockGlassMedical
+  suffix: Medical
+  components:
+  - type: Sprite
+    sprite: Structures/Doors/Airlocks/Glass/medical_glass.rsi
+  - type: PaintableAirlock
+    group: Glass
+
