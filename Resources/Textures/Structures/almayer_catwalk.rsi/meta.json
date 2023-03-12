@@ -1,0 +1,14 @@
+{
+    "version": 1,
+    "license": "CC-BY-SA-3.0",
+    "copyright": "Copyright (c) 2013-2014, The Open Source Game Clones Authors (WHAT CAN I SAY EXCEPT DELETE THIS)",
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "states": [
+        {
+            "name": "almayer_catwalk"
+        }
+    ]
+}

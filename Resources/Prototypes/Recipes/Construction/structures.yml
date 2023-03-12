@@ -512,7 +512,7 @@
   category: construction-category-structures
   description: It opens, it closes, and maybe crushes you.
   icon:
-    sprite: Structures/Doors/Airlocks/Standard/basic.rsi
+    sprite: Structures/Doors/Airlocks/Standard/celldoor.rsi
     state: assembly
   objectType: Structure
   placementMode: SnapgridCenter
@@ -529,7 +529,7 @@
   category: construction-category-structures
   description: It opens, it closes, and maybe crushes you.
   icon:
-    sprite: Structures/Doors/Airlocks/Glass/glass.rsi
+    sprite: Structures/Doors/Airlocks/Glass/celldoor.rsi
     state: assembly
   objectType: Structure
   placementMode: SnapgridCenter
