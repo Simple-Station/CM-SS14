@@ -9,16 +9,17 @@
   - type: Clickable
   - type: Sprite
     netsync: false
-    sprite: Structures/catwalk.rsi
+    sprite: Structures/almayer_catwalk.rsi
     drawdepth: FloorTiles
+    state: almayer_catwalk
   - type: Icon
-    sprite: Structures/catwalk.rsi
-    state: catwalk_preview
+    sprite: Structures/almayer_catwalk.rsi
+    state: almayer_catwalk
   - type: Transform
     anchored: true
-  - type: IconSmooth
-    key: catwalk
-    base: catwalk_
+  # - type: IconSmooth
+  #   key: catwalk
+  #   base: catwalk_
   - type: FootstepModifier
     footstepSoundCollection:
       collection: FootstepCatwalk
