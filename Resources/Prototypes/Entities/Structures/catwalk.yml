@@ -23,6 +23,9 @@
   - type: FootstepModifier
     footstepSoundCollection:
       collection: FootstepCatwalk
+  - type: Tag
+    tags:
+      - Catwalk
   - type: Construction
     graph: Catwalk
     node: Catwalk
