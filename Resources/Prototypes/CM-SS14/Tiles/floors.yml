@@ -14,7 +14,7 @@
   heatCapacity: 10000
 
 - type: tile
-  id: almayer_plate_darker
+  id: AlmayerSteelDark
   name: tile-cm-almayer-plate-darker
   sprite: /Textures/CM-SS14/Tiles/almayer_plate_darker.png
   baseTurfs:
@@ -29,7 +29,7 @@
   heatCapacity: 10000
 
 - type: tile
-  id: almayer_sterile_green
+  id: AlmayerSteelSterileGreen
   name: tile-cm-almayer-sterile-green
   sprite: /Textures/CM-SS14/Tiles/almayer_sterile_green.png
   baseTurfs:
@@ -44,7 +44,7 @@
   heatCapacity: 10000
 
 - type: tile
-  id: almayer_white_sterile
+  id: AlmayerSteelSterileWhite
   name: tile-cm-almayer-white-sterile
   sprite: /Textures/CM-SS14/Tiles/almayer_white_sterile.png
   baseTurfs:
@@ -59,7 +59,7 @@
   heatCapacity: 10000
 
 - type: tile
-  id: wood_almayer
+  id: AlmayerWood
   name: tile-cm-almayer-wood
   sprite: /Textures/CM-SS14/Tiles/almayer_wood.png
   baseTurfs:
@@ -74,7 +74,7 @@
   heatCapacity: 10000
 
 - type: tile
-  id: almayer_ai_floors
+  id: AlmayerAI
   name: tile-cm-almayer-ai-floors
   sprite: /Textures/CM-SS14/Tiles/almayer_ai_floors.png
   baseTurfs:
@@ -89,7 +89,7 @@
   heatCapacity: 10000
 
 - type: tile
-  id: outerhull_almayer
+  id: AlmayerOuterHull
   name: tile-cm-almayer-outerhull
   sprite: /Textures/CM-SS14/Tiles/almayer_outerhull.png
   baseTurfs:
@@ -104,7 +104,7 @@
   heatCapacity: 10000
 
 - type: tile
-  id: plating_almayer
+  id: AlmayerPlating
   name: tile-cm-almayer-plating
   sprite: /Textures/CM-SS14/Tiles/almayer_plating.png
   baseTurfs:
@@ -119,7 +119,7 @@
   heatCapacity: 10000
 
 - type: tile
-  id: plate_almayer
+  id: AlmayerPlate
   name: tile-cm-almayer-plate
   sprite: /Textures/CM-SS14/Tiles/almayer_plate.png
   baseTurfs:
@@ -134,7 +134,7 @@
   heatCapacity: 10000
 
 - type: tile
-  id: sterile_almayer
+  id: AlmayerSteelSterile
   name: tile-cm-almayer-sterile
   sprite: /Textures/CM-SS14/Tiles/almayer_sterile.png
   baseTurfs:
