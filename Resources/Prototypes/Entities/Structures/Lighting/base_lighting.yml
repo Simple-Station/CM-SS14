@@ -212,7 +212,7 @@
   components:
     - type: AmbientSound
       volume: -8
-      range: 4
+      range: 3
       sound:
         path: /Audio/Ambience/Objects/light_hum.ogg
     - type: Sprite
