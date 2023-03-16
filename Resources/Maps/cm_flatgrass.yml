@@ -122,7 +122,7 @@ entities:
   - gravityShakeSound: !type:SoundPathSpecifier
       path: /Audio/Effects/alert.ogg
     type: Gravity
-  - ambientLightColor: '#03050AFF'
+  - ambientLightColor: '#0B0E17FF'
     type: MapLight
   - space: False
     mixture:
