@@ -33,6 +33,10 @@
   - type: Faction
     factions:
     - NanoTrasen
+  # - type: Nightvision
+  #   tint: 0.3, 0.8, 0.35
+  #   strength: 7.5
+  #   noise: 0.35
 
 #Syndie
 - type: entity

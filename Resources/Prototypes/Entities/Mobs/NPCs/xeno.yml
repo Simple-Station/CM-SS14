@@ -112,6 +112,12 @@
   - type: Perishable #Ummmm the acid kills a lot of the bacteria or something
     molsPerSecondPerUnitMass: 0.0005
   - type: Xeno
+  - type: Nightvision
+    enabled: true
+    tint: 1, 1, 1
+    strength: 16
+    noise: 0
+    toggle: true
 
 - type: entity
   name: Praetorian
