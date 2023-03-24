@@ -4699,7 +4699,7 @@ entities:
     parent: 0
     type: Transform
 - uid: 672
-  type: FoodCondimentBottleVinegar
+  type: FoodCondimentBottleSmallVinegar
   components:
   - pos: -22.650276,1.6904688
     parent: 0
