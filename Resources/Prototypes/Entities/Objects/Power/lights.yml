@@ -87,9 +87,9 @@
   - type: LightBulb
     bulb: Bulb
     color: "#FFD1A3" # 4000K color temp
-    lightEnergy: 1.0
-    lightRadius: 6
-    lightSoftness: 1.1
+    lightEnergy: 1.2
+    lightRadius: 8
+    lightSoftness: 0.9
 
 - type: entity
   parent: BaseLightTube
@@ -104,33 +104,33 @@
     lightSoftness: 1
     PowerUse: 25
 
-- type: entity
-  parent: BaseLightTube
-  name: led light tube
-  description: A high power high energy bulb.
-  id: LedLightTube
-  components:
-  - type: LightBulb
-    color: "#EEEEFF"
-    lightEnergy: 1
-    lightRadius: 15
-    lightSoftness: 0.9
-    BurningTemperature: 350
-    PowerUse: 12
+# - type: entity
+#   parent: BaseLightTube
+#   name: led light tube
+#   description: A high power high energy bulb.
+#   id: LedLightTube
+#   components:
+#   - type: LightBulb
+#     color: "#EEEEFF"
+#     lightEnergy: 1
+#     lightRadius: 15
+#     lightSoftness: 0.9
+#     BurningTemperature: 350
+#     PowerUse: 12
 
-- type: entity
-  parent: BaseLightTube
-  name: exterior light tube
-  description: A high power high energy bulb for the depths of space. May contain mercury.
-  id: ExteriorLightTube
-  components:
-  - type: LightBulb
-    color: "#B4FCF0"
-    lightEnergy: 4.5
-    lightRadius: 12
-    lightSoftness: 0.5
-    BurningTemperature: 350
-    PowerUse: 100
+# - type: entity
+#   parent: BaseLightTube
+#   name: exterior light tube
+#   description: A high power high energy bulb for the depths of space. May contain mercury.
+#   id: ExteriorLightTube
+#   components:
+#   - type: LightBulb
+#     color: "#B4FCF0"
+#     lightEnergy: 4.5
+#     lightRadius: 12
+#     lightSoftness: 0.5
+#     BurningTemperature: 350
+#     PowerUse: 100
 
 - type: entity
   parent: BaseLightTube
@@ -141,7 +141,7 @@
   - type: LightBulb
     color: "#FFAF38"
     lightEnergy: 4
-    lightRadius: 10
-    lightSoftness: 0.5
+    lightRadius: 12
+    lightSoftness: 1
     BurningTemperature: 350
-    PowerUse: 100
+    PowerUse: 140

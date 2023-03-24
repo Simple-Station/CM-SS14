@@ -1,0 +1,57 @@
+- type: entity
+  parent: BaseStructure
+  id: FenceBase
+  name: fence
+  description: A fence.
+  components:
+  - type: RangedDamageSound
+    soundGroups:
+      Brute:
+        collection:
+          MetalBulletImpact
+    soundTypes:
+      Heat:
+        collection:
+          MetalLaserImpact
+  - type: Sprite
+    sprite: CM-SS14/Structures/Obstacles/fence_marine.rsi
+    netsync: false
+    drawdepth: Walls
+  - type: Icon
+    sprite: CM-SS14/Structures/Obstacles/fence_marine.rsi
+    state: full
+  - type: Physics
+    bodyType: Static
+  - type: Fixtures
+    fixtures:
+    - shape:
+        !type:PhysShapeAabb
+        bounds: "-0.3,-0.3,0.3,0.3"
+      mask:
+      - FullTileMask
+      layer:
+      - WallLayer
+      density: 1000
+  - type: Repairable
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: FlimsyMetallic
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 35
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/Effects/metalbreak.ogg
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          PartRodMetal1:
+            min: 0
+            max: 2
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: IconSmooth
+    key: walls
+    base: fence

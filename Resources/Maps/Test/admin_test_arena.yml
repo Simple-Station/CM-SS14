@@ -317,18 +317,6 @@ entities:
   - pos: -8.5,7.5
     parent: 104
     type: Transform
-- uid: 37
-  type: AirlockCommandLocked
-  components:
-  - pos: -0.5,-5.5
-    parent: 104
-    type: Transform
-- uid: 38
-  type: AirlockCommandLocked
-  components:
-  - pos: -0.5,4.5
-    parent: 104
-    type: Transform
 - uid: 39
   type: WallRiveted
   components:
