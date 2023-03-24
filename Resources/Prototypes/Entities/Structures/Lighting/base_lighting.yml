@@ -5,6 +5,7 @@
 
 #Basic lights
 - type: entity
+  abstract: true
   id: AlwaysPoweredWallLight
   name: light
   description: "An always powered light."
@@ -64,6 +65,7 @@
     - Wallmount
 
 - type: entity
+  abstract: true
   name: light
   description: "A light fixture. Draws power and produces light when equipped with a light tube."
   id: PoweredlightEmpty
@@ -100,6 +102,7 @@
       Toggle: []
 
 - type: entity
+  abstract: true
   id: Poweredlight
   description: "A light fixture. Draws power and produces light when equipped with a light tube."
   suffix: ""
@@ -113,53 +116,53 @@
       types:
         Heat: 5
 
-#LED lights
-- type: entity
-  id: PoweredlightLED
-  description: "A light fixture. Draws power and produces light when equipped with a light tube."
-  suffix: LED
-  parent: Poweredlight
-  components:
-  - type: PoweredLight
-    hasLampOnSpawn: LedLightTube
-    damage:
-      types:
-        Heat: 5
+# #LED lights
+# - type: entity
+#   id: PoweredlightLED
+#   description: "A light fixture. Draws power and produces light when equipped with a light tube."
+#   suffix: LED
+#   parent: Poweredlight
+#   components:
+#   - type: PoweredLight
+#     hasLampOnSpawn: LedLightTube
+#     damage:
+#       types:
+#         Heat: 5
 
-- type: entity
-  parent: AlwaysPoweredWallLight
-  id: AlwaysPoweredLightLED
-  suffix: Always Powered, LED
-  components:
-  - type: PointLight
-    radius: 10
-    energy: 2.5
-    softness: 0.9
-    color: "#EEEEFF"
+# - type: entity
+#   parent: AlwaysPoweredWallLight
+#   id: AlwaysPoweredLightLED
+#   suffix: Always Powered, LED
+#   components:
+#   - type: PointLight
+#     radius: 10
+#     energy: 2.5
+#     softness: 0.9
+#     color: "#EEEEFF"
 
-#Exterior lights
-- type: entity
-  id: PoweredlightExterior
-  description: "A light fixture. Draws power and produces light when equipped with a light tube."
-  suffix: Blue
-  parent: Poweredlight
-  components:
-  - type: PoweredLight
-    hasLampOnSpawn: ExteriorLightTube
-    damage:
-      types:
-        Heat: 5
+# #Exterior lights
+# - type: entity
+#   id: PoweredlightExterior
+#   description: "A light fixture. Draws power and produces light when equipped with a light tube."
+#   suffix: Blue
+#   parent: Poweredlight
+#   components:
+#   - type: PoweredLight
+#     hasLampOnSpawn: ExteriorLightTube
+#     damage:
+#       types:
+#         Heat: 5
 
-- type: entity
-  parent: AlwaysPoweredWallLight
-  id: AlwaysPoweredLightExterior
-  suffix: Always Powered, Blue
-  components:
-  - type: PointLight
-    radius: 12
-    energy: 4.5
-    softness: 0.5
-    color: "#B4FCF0"
+# - type: entity
+#   parent: AlwaysPoweredWallLight
+#   id: AlwaysPoweredLightExterior
+#   suffix: Always Powered, Blue
+#   components:
+#   - type: PointLight
+#     radius: 12
+#     energy: 4.5
+#     softness: 0.5
+#     color: "#B4FCF0"
 
 #Sodium lights
 - type: entity
@@ -173,6 +176,11 @@
     damage:
       types:
         Heat: 5
+  - type: AmbientSound
+    volume: -6
+    range: 5
+    sound:
+      path: /Audio/Ambience/Objects/light_hum.ogg
 
 - type: entity
   parent: AlwaysPoweredWallLight
@@ -180,9 +188,9 @@
   suffix: Always Powered, Sodium
   components:
   - type: PointLight
-    radius: 10
+    radius: 12
     energy: 4
-    softness: 0.5
+    softness: 1
     color: "#FFAF38"
 
 #Small lights
@@ -194,18 +202,19 @@
   parent: AlwaysPoweredWallLight
   components:
     - type: AmbientSound
-      volume: -15
-      range: 2
+      volume: -8
+      range: 3
       sound:
         path: /Audio/Ambience/Objects/light_hum.ogg
     - type: Sprite
       sprite: Structures/Wallmounts/Lighting/light_small.rsi
       state: on
     - type: PointLight
-      energy: 1.0
-      radius: 6
-      softness: 1.1
+      energy: 1.2
+      radius: 8
+      softness: 0.9
       enabled: true
+      color: "#FFE4CE"
     - type: Damageable
       damageContainer: Inorganic
     - type: Destructible
