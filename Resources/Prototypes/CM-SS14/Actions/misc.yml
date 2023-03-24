@@ -1,0 +1,9 @@
+- type: instantAction
+  id: NightvisionToggleAction
+  icon: Interface/Actions/web.png
+  name: misc-action-nightvision-name
+  description: misc-action-nightvision-description
+  serverEvent: !type:NightvisionToggleActionEvent
+  useDelay: 20
+  clientExclusive: true
+

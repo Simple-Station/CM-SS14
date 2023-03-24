@@ -114,10 +114,17 @@
   - type: Xeno
   - type: Nightvision
     enabled: true
-    tint: 1, 1, 1
+    tint: 1, 0.90, 0.95
     strength: 16
     noise: 0
     toggle: true
+    toggleSound: /Audio/CM-SS14/Effects/Items/nightvision.ogg
+    icon:
+      sprite: Actions/Implants/implants.rsi
+      state: explosive
+    iconOn:
+      sprite: Actions/Implants/implants.rsi
+      state: freedom
 
 - type: entity
   name: Praetorian

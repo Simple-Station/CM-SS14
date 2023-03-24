@@ -4,4 +4,4 @@
   name: xeno-action-rest-name
   description: xeno-action-rest-description
   serverEvent: !type:XenoRestActionEvent
-  useDelay: 20
+  useDelay: 10
