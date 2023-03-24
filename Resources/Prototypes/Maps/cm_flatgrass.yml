@@ -1,0 +1,28 @@
+- type: gameMap
+  id: CM_Flatgrass
+  mapName: 'CM Flatgrass'
+  mapPath: /Maps/cm_flatgrass.yml
+  minPlayers: 0
+  maxPlayers: 100
+  fallback: true
+  stations:
+    CM_Flatgrass:
+      mapNameTemplate: '{0} Jungle {1}'
+      nameGenerator:
+        !type:NanotrasenNameGenerator
+        prefixCreator: '14'
+      overflowJobs:
+        - Passenger
+      availableJobs:
+        Passenger: [ -1, -1 ]
+        Chef: [ 1, 1 ]
+        Captain: [ 1, 1 ]
+        HeadOfPersonnel: [ 1, 1 ]
+        ChiefEngineer: [ 1, 1 ]
+        ChiefMedicalOfficer: [ 1, 1 ]
+        ResearchDirector: [ 1, 1 ]
+        HeadOfSecurity: [ 1, 1 ]
+        StationEngineer: [ 2, 4 ]
+        # MedicalDoctor: [ 2, 2 ]
+        SecurityOfficer: [ 4, 4 ]
+        SecurityCadet: [ 12, 24 ]
