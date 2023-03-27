@@ -25,7 +25,7 @@ public abstract class SharedCameraRecoilSystem : EntitySystem
     /// <summary>
     ///     The maximum magnitude of the kick applied to the camera at any point.
     /// </summary>
-    protected const float KickMagnitudeMax = 1f;
+    protected const float KickMagnitudeMax = 6f;
 
     private ISawmill _log = default!;
 

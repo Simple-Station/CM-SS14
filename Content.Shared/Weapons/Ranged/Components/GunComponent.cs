@@ -58,10 +58,23 @@ public partial class GunComponent : Component
     public Angle AngleIncrease = Angle.FromDegrees(0.5);
 
     /// <summary>
+    /// How much the multiplier reduced AngleIncrease when weilded.
+    /// </summary>
+    [ViewVariables(VVAccess.ReadWrite), DataField("angleIncreaseWeildedMultiplier")]
+    public float AngleIncreaseWeildedMultiplier = 1f;
+
+
+    /// <summary>
     /// How much the <see cref="CurrentAngle"/> decreases per second.
     /// </summary>
     [DataField("angleDecay")]
     public Angle AngleDecay = Angle.FromDegrees(4);
+
+    /// <summary>
+    /// The amount that weilding the gun decreases spread.
+    /// </summary>
+    [ViewVariables(VVAccess.ReadWrite), DataField("minAngleWeildedMultiplier")]
+    public float MinAngleWeildedMultiplier = 1f;
 
     /// <summary>
     /// The maximum angle allowed for <see cref="CurrentAngle"/>
@@ -109,7 +122,7 @@ public partial class GunComponent : Component
     /// How fast the projectile moves.
     /// </summary>
     [ViewVariables(VVAccess.ReadWrite), DataField("projectileSpeed")]
-    public float ProjectileSpeed = 25f;
+    public float ProjectileSpeed = 30f;
 
     /// <summary>
     /// When the gun is next available to be shot.

@@ -15,9 +15,16 @@
     slots:
     - Back
     - suitStorage
+  - type: Wieldable
+    weildTime: 0.5
   - type: AmmoCounter
   - type: Gun
     fireRate: 5
+    maxAngle: 60 #in degrees
+    minAngle: 25 #in degrees
+    angleIncrease: 15 #in degrees
+    minAngleWeildedMultiplier: 0.1 # 0.1 (10%) is the amount of the minAngle left after the operation
+    angleIncreaseWeildedMultiplier: 0.005 # the poucentage left of the spray angle gradual spread after the operation
     selectedMode: FullAuto
     availableModes:
       - FullAuto
@@ -25,6 +32,7 @@
       path: /Audio/Weapons/Guns/Gunshots/batrifle.ogg
   - type: ChamberMagazineAmmoProvider
   - type: ItemSlots
+    ejectOnUse: false
     slots:
       gun_magazine:
         name: Magazine
@@ -200,6 +208,10 @@
   - type: Clothing
     sprite: Objects/Weapons/Guns/Rifles/M41A_MK2_jungle.rsi
   - type: Gun
+    fireRate: 20
+    selectedMode: Burst
+    availableModes:
+      - Burst
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/ltrifle.ogg
   - type: ItemSlots
@@ -207,8 +219,8 @@
       gun_magazine:
         name: Magazine
         startingItem: MagazineRifle
-        insertSound: /Audio/Weapons/Guns/MagIn/ltrifle_magin.ogg
-        ejectSound: /Audio/Weapons/Guns/MagOut/ltrifle_magout.ogg
+        insertSound: /Audio/CM-SS14/Weapons/Guns/MagIn/m41_reload.ogg
+        ejectSound: /Audio/CM-SS14/Weapons/Guns/MagOut/m41_unload.ogg
         priority: 2
         whitelist:
           tags:
