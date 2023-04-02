@@ -74,6 +74,8 @@ namespace Content.Shared.Maps
         /// </summary>
         [DataField("weather")] public bool Weather = false;
 
+        [DataField("tileAmbientSound")] public String? TileAmbientSound { get;}
+
         public void AssignTileId(ushort id)
         {
             TileId = id;

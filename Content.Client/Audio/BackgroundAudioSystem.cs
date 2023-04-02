@@ -3,6 +3,7 @@ using Content.Client.Gameplay;
 using Content.Client.GameTicking.Managers;
 using Content.Client.Lobby;
 using Content.Shared.CCVar;
+using Content.Shared.Maps;
 using JetBrains.Annotations;
 using Robust.Client;
 using Robust.Client.GameObjects;
@@ -11,6 +12,7 @@ using Robust.Client.ResourceManagement;
 using Robust.Client.State;
 using Robust.Shared.Audio;
 using Robust.Shared.Configuration;
+using Robust.Shared.Map;
 using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
@@ -31,6 +33,8 @@ public sealed class BackgroundAudioSystem : EntitySystem
     [Dependency] private readonly IRobustRandom _robustRandom = default!;
     [Dependency] private readonly IStateManager _stateManager = default!;
     [Dependency] private readonly IGameTiming _timing = default!;
+    [Dependency] private readonly IMapManager _mappingManager = default!;
+    [Dependency] private readonly ITileDefinitionManager _tileDef = default!;
 
     private readonly AudioParams _ambientParams = new(-10f, 1, "Master", 0, 0, 0, true, 0f);
     private readonly AudioParams _lobbyParams = new(-5f, 1, "Master", 0, 0, 0, true, 0f);
@@ -51,6 +55,7 @@ public sealed class BackgroundAudioSystem : EntitySystem
 
     private SoundCollectionPrototype _spaceAmbience = default!;
     private SoundCollectionPrototype _stationAmbience = default!;
+    private SoundCollectionPrototype _defaultAmbience = default!;
 
     public override void Initialize()
     {
@@ -58,7 +63,8 @@ public sealed class BackgroundAudioSystem : EntitySystem
 
         _stationAmbience = _prototypeManager.Index<SoundCollectionPrototype>("StationAmbienceBase");
         _spaceAmbience = _prototypeManager.Index<SoundCollectionPrototype>("SpaceAmbienceBase");
-        _currentCollection = _stationAmbience;
+        _defaultAmbience = _prototypeManager.Index<SoundCollectionPrototype>("TileForestAmbience");
+        _currentCollection = _defaultAmbience;
 
         // TODO: Ideally audio loading streamed better / we have more robust audio but this is quite annoying
         var cache = IoCManager.Resolve<IResourceCache>();
@@ -118,10 +124,33 @@ public sealed class BackgroundAudioSystem : EntitySystem
         EndLobbyMusic();
     }
 
+    public override void FrameUpdate(float frameTime)
+    {
+        base.FrameUpdate(frameTime);
+
+        if (_playMan.LocalPlayer?.ControlledEntity is not { } entity)
+            return;
+
+        CheckAmbience(Transform(entity));
+    }
+
     private void CheckAmbience(TransformComponent xform)
     {
         if (xform.GridUid != null)
-            ChangeAmbience(_stationAmbience);
+            if (_mappingManager.TryGetGrid(xform.GridUid.Value, out var grid))
+            {
+                var tile = grid.GetTileRef(xform.Coordinates);
+                var tileDef = (ContentTileDefinition)_tileDef[tile.Tile.TypeId];
+
+                if (tileDef.TileAmbientSound == "Stop")
+                    ChangeAmbience(null);
+
+                if (tileDef.TileAmbientSound != null &&
+                    _prototypeManager.TryIndex<SoundCollectionPrototype>(tileDef.TileAmbientSound, out var soundCollection))
+                    ChangeAmbience(soundCollection);
+                else
+                    return;
+            }
         else
             ChangeAmbience(_spaceAmbience);
     }
@@ -137,7 +166,7 @@ public sealed class BackgroundAudioSystem : EntitySystem
         CheckAmbience(message.Transform);
     }
 
-    private void ChangeAmbience(SoundCollectionPrototype newAmbience)
+    private void ChangeAmbience(SoundCollectionPrototype? newAmbience)
     {
         if (_currentCollection == newAmbience)
             return;
