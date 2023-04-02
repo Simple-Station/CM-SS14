@@ -1042,6 +1042,7 @@
     collection: FootstepGrass
   heatCapacity: 10000
   weather: true
+  tileAmbientSound: TileJungleAmbience
 
 - type: tile
   id: FloorDirt
@@ -1191,6 +1192,7 @@
   footstepSounds:
     collection: FootstepAsteroid
   heatCapacity: 10000
+  tileAmbientSound: TileCaveAmbience
 
 - type: tile
   id: FloorCaveDrought
@@ -1205,6 +1207,7 @@
   footstepSounds:
     collection: FootstepAsteroid
   heatCapacity: 10000
+  tileAmbientSound: TileDesertAmbience
 
 - type: tile
   id: FloorFlesh
