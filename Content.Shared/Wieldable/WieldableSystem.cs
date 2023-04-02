@@ -14,6 +14,9 @@ using Content.Shared.Weapons.Ranged.Components;
 using Content.Shared.Weapons.Ranged.Systems;
 using Content.Shared.Wieldable.Components;
 using Robust.Shared.Player;
+using Content.Shared.Movement.Systems;
+using Content.Shared.Inventory;
+using Content.Shared.Movement.Components;
 
 namespace Content.Shared.Wieldable;
 
@@ -25,6 +28,7 @@ public sealed class WieldableSystem : EntitySystem
     [Dependency] private readonly SharedItemSystem _itemSystem = default!;
     [Dependency] private readonly SharedPopupSystem _popupSystem = default!;
     [Dependency] private readonly SharedAudioSystem _audioSystem = default!;
+    [Dependency] private readonly MovementSpeedModifierSystem _moveSystem = default!;
 
     public override void Initialize()
     {
@@ -42,6 +46,16 @@ public sealed class WieldableSystem : EntitySystem
         SubscribeLocalEvent<GunRequiresWieldComponent, AttemptShootEvent>(OnShootAttempt);
 
         SubscribeLocalEvent<IncreaseDamageOnWieldComponent, MeleeHitEvent>(OnMeleeHit);
+
+        SubscribeLocalEvent<WieldableComponent, InventoryRelayedEvent<RefreshMovementSpeedModifiersEvent>>((e, c, ev) => OnRefreshMovementSpeedModifiers(e, c, ev.Args));
+    }
+
+    private void OnRefreshMovementSpeedModifiers(EntityUid uid, WieldableComponent component, RefreshMovementSpeedModifiersEvent args)
+    {
+        if (component.Wielded)
+        {
+            args.ModifySpeed(component.WalkMod, component.SprintMod);
+        }
     }
 
     private void OnMeleeAttempt(EntityUid uid, MeleeRequiresWieldComponent component, ref AttemptMeleeEvent args)
@@ -200,6 +214,11 @@ public sealed class WieldableSystem : EntitySystem
 
         Dirty(component);
         args.Handled = true;
+
+        if (TryComp(args.Args.User, out MovementSpeedModifierComponent? movementSlowdownComponent))
+        {
+            _moveSystem.RefreshMovementSpeedModifiers(args.Args.User, movementSlowdownComponent);
+        }
     }
 
     private void OnItemUnwielded(EntityUid uid, WieldableComponent component, ItemUnwieldedEvent args)
@@ -229,6 +248,11 @@ public sealed class WieldableSystem : EntitySystem
 
         Dirty(component);
         _virtualItemSystem.DeleteInHandsMatching(args.User.Value, uid);
+
+        if (TryComp(args.User, out MovementSpeedModifierComponent? movementSlowdownComponent))
+        {
+            _moveSystem.RefreshMovementSpeedModifiers(args.User.Value, movementSlowdownComponent);
+        }
     }
 
     private void OnItemLeaveHand(EntityUid uid, WieldableComponent component, GotUnequippedHandEvent args)
@@ -236,6 +260,11 @@ public sealed class WieldableSystem : EntitySystem
         if (!component.Wielded || uid != args.Unequipped)
             return;
         RaiseLocalEvent(uid, new ItemUnwieldedEvent(args.User, force: true), true);
+
+        if (TryComp(args.User, out MovementSpeedModifierComponent? movementSlowdownComponent))
+        {
+            _moveSystem.RefreshMovementSpeedModifiers(args.User, movementSlowdownComponent);
+        }
     }
 
     private void OnVirtualItemDeleted(EntityUid uid, WieldableComponent component, VirtualItemDeletedEvent args)

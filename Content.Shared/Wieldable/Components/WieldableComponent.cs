@@ -32,4 +32,10 @@ public sealed partial class WieldableComponent : Component
 
     [DataField("wieldTime")]
     public float WieldTime = 1.5f;
+
+    [DataField("walkMod")]
+    public float WalkMod = 0.85f;
+
+    [DataField("sprintMod")]
+    public float SprintMod = 0.75f;
 }
