@@ -45,6 +45,64 @@ Refer to [the space wizards guide](https://docs.spacestation14.io/getting-starte
 > 5. Run both the `Scripts/sh/run3server.bat` and `scripts/sh/run4client.sh`
 > 6. Connect to localhost and play.
 
+## Todo
+### Combat:
+>    - [ ] Finish basic weaponry.
+>        - [X] Rifle.
+>        - [ ] Pistol.
+>        - [ ] Shotgun.
+>        - [X] SMG.
+>        - [ ] Flamethrower.
+>        - [ ] Sniper?
+>        - [ ] Mounted weapon.
+>        - [ ] Grenades.
+
+>    - [ ] Custom armor.
+>        - [ ] Leightweight, medium, and heavy armor.
+>        - [ ] Custom armor textures.
+
+>    - [ ] Cover system, one sided barrier.
+
+>    - [ ] Medical equipment.
+>        - [ ] Pill boxes.
+>        - [ ] Disposable packets of pills.
+>        - [ ] Defibs.
+
+
+### Xenos:
+>    - [ ] Xeno eggs.
+>        - [ ] Lay egg ability.
+>        - [ ] Egg can be taken as ghost role.
+>        - [ ] Baby xeno requires lots of food, turns into big xeno.
+
+>    - [ ] Resin system.
+>        - [ ] Xeno "mana" system.
+>        - [ ] Resing seed ability.
+>        - [ ] Resin seed spreads resin coating.
+>        - [ ] Xenos on resin coating heal.
+
+>    - [ ] Xeno castes
+>        - [ ] Drone.
+>        - [ ] Runner.
+>        - [ ] Sentinel.
+>        - [ ] Defender.
+>        - [ ] Queen.
+
+
+### Server:
+>    - [ ] Mapping.
+>        - [ ] Map limiter.
+>        - [ ] Xeno cave.
+>        - [ ] Basic on-site medical.
+>        - [ ] Weather system.
+>        - [ ] Telecomms.
+
+>    - [ ] Gameticking.
+>        - [ ] Round system.
+>        - [ ] Team seperator.
+>        - [ ] Team selector.
+>        - [ ] Xeno roles for selection.
+
 ## License
 
 All code for the content repository is licensed under [MIT](https://github.com/space-wizards/space-station-14/blob/master/LICENSE.TXT).
