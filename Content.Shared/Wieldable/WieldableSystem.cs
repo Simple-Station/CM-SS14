@@ -17,6 +17,7 @@ using Robust.Shared.Player;
 using Content.Shared.Movement.Systems;
 using Content.Shared.Inventory;
 using Content.Shared.Movement.Components;
+using Content.Shared.CMSS14.Wieldable.Components;
 
 namespace Content.Shared.Wieldable;
 
@@ -48,6 +49,13 @@ public sealed class WieldableSystem : EntitySystem
         SubscribeLocalEvent<IncreaseDamageOnWieldComponent, MeleeHitEvent>(OnMeleeHit);
 
         SubscribeLocalEvent<WieldableComponent, InventoryRelayedEvent<RefreshMovementSpeedModifiersEvent>>((e, c, ev) => OnRefreshMovementSpeedModifiers(e, c, ev.Args));
+
+        SubscribeLocalEvent<CurrentlyWieldingComponent, RefreshMovementSpeedModifiersEvent>(OnRefreshMovementSpeedModifiers);
+    }
+
+    private void OnRefreshMovementSpeedModifiers(EntityUid uid, CurrentlyWieldingComponent component, RefreshMovementSpeedModifiersEvent args)
+    {
+        args.ModifySpeed(component.WalkMod, component.SprintMod);
     }
 
     private void OnRefreshMovementSpeedModifiers(EntityUid uid, WieldableComponent component, RefreshMovementSpeedModifiersEvent args)
@@ -201,6 +209,10 @@ public sealed class WieldableSystem : EntitySystem
 
         component.Wielded = true;
 
+        var curWieldComp = EntityManager.EnsureComponent<CurrentlyWieldingComponent>(args.Args.User);
+        curWieldComp.WalkMod = component.WalkMod;
+        curWieldComp.SprintMod = component.SprintMod;
+
         if (component.WieldSound != null)
             _audioSystem.PlayPredicted(component.WieldSound, uid, args.User);
 
@@ -234,6 +246,8 @@ public sealed class WieldableSystem : EntitySystem
         }
 
         component.Wielded = false;
+
+        EntityManager.RemoveComponent<CurrentlyWieldingComponent>(args.User.Value);
 
         if (!args.Force) // don't play sound/popup if this was a forced unwield
         {
