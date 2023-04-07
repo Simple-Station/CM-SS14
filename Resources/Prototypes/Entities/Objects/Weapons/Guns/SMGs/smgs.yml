@@ -17,6 +17,8 @@
     - suitStorage
   - type: Wieldable
     weildTime: 0.5
+    sprintMod: 0.95
+    walkMod: 1
   - type: AmmoCounter
   - type: Gun
     fireRate: 5
