@@ -58,7 +58,7 @@ public partial class GunComponent : Component
     public Angle AngleIncrease = Angle.FromDegrees(0.5);
 
     /// <summary>
-    /// How much the multiplier reduced AngleIncrease when weilded.
+    /// How much the multiplier reduces AngleIncrease when weilded.
     /// </summary>
     [ViewVariables(VVAccess.ReadWrite), DataField("angleIncreaseWeildedMultiplier")]
     public float AngleIncreaseWeildedMultiplier = 1f;

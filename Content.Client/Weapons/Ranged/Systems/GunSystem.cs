@@ -180,7 +180,7 @@ public sealed partial class GunSystem : SharedGunSystem
         // This also means any ammo specific stuff can be grabbed as necessary.
         var direction = fromCoordinates.ToMapPos(EntityManager, TransformSystem) - toCoordinates.ToMapPos(EntityManager, TransformSystem);
 
-        var recoilStrength = (float) (gun.CameraRecoilScalar + gun.CurrentAngle / 20f);
+        var recoilStrength = (float) (((gun.CurrentAngle + 90) / 90f) * gun.CameraRecoilScalar);
 
         foreach (var (ent, shootable) in ammo)
         {

@@ -15,7 +15,7 @@ public abstract class SharedCameraRecoilSystem : EntitySystem
     /// <summary>
     ///     Minimum rate of magnitude restore towards 0 kick.
     /// </summary>
-    private const float RestoreRateMin = 0.1f;
+    private const float RestoreRateMin = 0.5f;
 
     /// <summary>
     ///     Time in seconds since the last kick that lerps RestoreRateMin and RestoreRateMax
@@ -25,7 +25,7 @@ public abstract class SharedCameraRecoilSystem : EntitySystem
     /// <summary>
     ///     The maximum magnitude of the kick applied to the camera at any point.
     /// </summary>
-    protected const float KickMagnitudeMax = 6f;
+    protected const float KickMagnitudeMax = 5f;
 
     private ISawmill _log = default!;
 

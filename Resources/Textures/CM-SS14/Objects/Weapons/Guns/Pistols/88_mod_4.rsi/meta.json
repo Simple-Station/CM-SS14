@@ -1,7 +1,7 @@
 {
     "version": 1,
     "license": "CC-BY-SA-3.0",
-    "copyright": "Taken/modified from tgstation at https://github.com/tgstation/tgstation/pull/41393/commits/1e56473177d0994d163c9edca3d13d6e5b640cc4, https://github.com/tgstation/tgstation/tree/master/icons/obj/weapons/guns backpack sprite by Peptide (copy of carbine)",
+    "copyright": "Taken from desertrose at https://github.com/DesertRose2/desertrose/commit/120961e254d7f83a6e00a02c76e734f9e5019345, https://github.com/DesertRose2/desertrose/blob/master/icons/obj/guns/projectile.dmi",
     "size": {
         "x": 32,
         "y": 32
@@ -25,7 +25,7 @@
             "directions": 4
         },
         {
-            "name": "equipped-BACKPACK",
+            "name": "equipped-BELT",
             "directions": 4
         },
         {
