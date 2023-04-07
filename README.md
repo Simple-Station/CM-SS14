@@ -51,7 +51,7 @@ Refer to [the space wizards guide](https://docs.spacestation14.io/getting-starte
 >        - [X] Rifle.
 >        - [ ] Pistol.
 >        - [ ] Shotgun.
->        - [X] SMG.
+>        - [ ] SMG.
 >        - [ ] Flamethrower.
 >        - [ ] Sniper?
 >        - [ ] Mounted weapon.
