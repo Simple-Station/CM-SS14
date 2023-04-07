@@ -34,6 +34,7 @@ public sealed partial class NPCCombatSystem : EntitySystem
         base.Initialize();
         InitializeMelee();
         InitializeRanged();
+        InitializeXenoJump();
     }
 
     public override void Update(float frameTime)
@@ -41,5 +42,6 @@ public sealed partial class NPCCombatSystem : EntitySystem
         base.Update(frameTime);
         UpdateMelee(frameTime);
         UpdateRanged(frameTime);
+        UpdateXenoJump(frameTime);
     }
 }

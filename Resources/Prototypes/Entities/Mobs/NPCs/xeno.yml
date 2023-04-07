@@ -111,6 +111,20 @@
   - type: NoSlip
   - type: Perishable #Ummmm the acid kills a lot of the bacteria or something
     molsPerSecondPerUnitMass: 0.0005
+  - type: Xeno
+  - type: Nightvision
+    enabled: true
+    tint: 1, 0.90, 0.95
+    strength: 16
+    noise: 0
+    toggle: true
+    toggleSound: /Audio/CM-SS14/Effects/Items/nightvision.ogg
+    icon:
+      sprite: Actions/Implants/implants.rsi
+      state: explosive
+    iconOn:
+      sprite: Actions/Implants/implants.rsi
+      state: freedom
 
 - type: entity
   name: Praetorian
@@ -147,6 +161,7 @@
       - MobMask
       layer:
       - MobLayer
+  - type: Xeno
 
 - type: entity
   name: Drone
@@ -187,6 +202,7 @@
       - MobMask
       layer:
       - MobLayer
+  - type: Xeno
 
 - type: entity
   name: Queen
@@ -231,6 +247,7 @@
       - MobMask
       layer:
       - MobLayer
+  - type: Xeno
 
 - type: entity
   name: Ravager
@@ -275,6 +292,7 @@
       - MobMask
       layer:
       - MobLayer
+  - type: Xeno
 
 - type: entity
   name: Runner
@@ -316,6 +334,7 @@
       - MobMask
       layer:
       - MobLayer
+  - type: Xeno
 
 - type: entity
   name: Rouny
@@ -326,6 +345,7 @@
     drawdepth: Mobs
     sprite: Mobs/Aliens/Xenos/rouny.rsi
     offset: 0,0.6
+  - type: Xeno
 
 - type: entity
   name: Spitter
@@ -362,6 +382,7 @@
       - MobMask
       layer:
       - MobLayer
+  - type: Xeno
 
 - type: entity
   name: space adder
@@ -420,6 +441,7 @@
       - MobMask
       layer:
       - MobLayer
+  - type: Xeno
 
 - type: entity
   name: space adder
@@ -445,3 +467,53 @@
         Base: dead_small_purple_snake
   - type: SolutionTransfer
     maxTransferAmount: 1
+  - type: Xeno
+
+- type: entity
+  id: XenoWeeds
+  parent: BaseStructure
+  name: "weeds"
+  description: "Fancy walking surface."
+  components:
+  - type: Damageable
+    damageContainer: Inorganic
+  - type: Destructible
+    thresholds:
+      - trigger:
+          !type:DamageTrigger
+          damage: 10
+        behaviors:
+          - !type:DoActsBehavior
+            acts: [ "Destruction" ]
+  - type: Physics
+    canCollide: true
+  - type: Clickable
+  - type: Sprite
+    drawdepth: FloorTiles
+    netsync: false
+    sprite: Objects/Misc/kudzu.rsi
+    state: kudzu_11
+  - type: Icon
+    sprite: Structures/Furniture/Carpets/green_carpet.rsi
+  - type: XenoWeedss
+    damage:
+      groups:
+        Brute: -5 ## 0.1 per
+        Burn: -5
+      types:
+        Poison: -2
+  - type: Fixtures
+    fixtures:
+    - shape:
+        !type:PhysShapeAabb
+        bounds: "-0.4,-0.3,0.4,0.3"
+      id: "slips"
+      hard: false
+      layer:
+      - SlipLayer
+    - shape:
+        !type:PhysShapeAabb
+        bounds: "-0.4,-0.3,0.4,0.3"
+      density: 10
+      mask:
+      - ItemMask

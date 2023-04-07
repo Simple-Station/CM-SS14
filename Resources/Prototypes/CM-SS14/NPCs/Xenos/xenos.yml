@@ -1,0 +1,94 @@
+- type: htnCompound
+  id: XenoNewCompound
+  branches:
+    - tasks:
+        - id: PickRangedTargetPrimitive
+        - id: FacehuggerMoveToTargetPrimitive
+        - id: FaceHuggerPrepareCompound
+    - tasks:
+        - id: IdleCompound
+
+- type: htnCompound
+  id: FaceHuggerPrepareCompound
+  branches:
+    - tasks:
+        - id: FaceHuggerPrepareSoundPrimitive
+        - id: XenoWaitJumpTimePrimitive
+        - id: XenoFaceHuggerLeapCompound
+    - tasks:
+        - id: XenoNewCompound
+  preconditions:
+    - !type:KeyExistsPrecondition
+      key: CombatTarget
+    - !type:TargetInRangePrecondition
+      targetKey: CombatTarget
+      rangeKey: RangedRange
+    - !type:TargetInLOSPrecondition
+      targetKey: CombatTarget
+      rangeKey: RangedRange
+
+- type: htnCompound
+  id: XenoFaceHuggerLeapCompound
+  branches:
+    - tasks:
+        - id: FaceHuggerAttackSoundPrimitive
+        - id: FaceHuggerLeapSoundPrimitive
+        - id: LeapPrimitive
+        - id: XenoWaitLandTimePrimitive
+  preconditions:
+    - !type:KeyExistsPrecondition
+      key: CombatTarget
+    - !type:TargetInRangePrecondition
+      targetKey: CombatTarget
+      rangeKey: RangedRange
+    - !type:TargetInLOSPrecondition
+      targetKey: CombatTarget
+      rangeKey: RangedRange
+
+- type: htnPrimitive
+  id: LeapPrimitive
+  operator: !type:XenoJumpOperator
+    targetKey: CombatTarget
+  preconditions:
+    - !type:KeyExistsPrecondition
+      key: CombatTarget
+    - !type:TargetInRangePrecondition
+      targetKey: CombatTarget
+      rangeKey: RangedRange
+    - !type:TargetInLOSPrecondition
+      targetKey: CombatTarget
+      rangeKey: RangedRange
+
+- type: htnPrimitive
+  id: FacehuggerMoveToTargetPrimitive
+  operator: !type:MoveToOperator
+    pathfindInPlanning: false
+    removeKeyOnFinish: false
+    targetKey: CombatTargetCoordinates
+    pathfindKey: CombatTargetPathfind
+    rangeKey: RangedRange
+
+- type: htnPrimitive
+  id: XenoWaitJumpTimePrimitive
+  operator: !type:WaitOperator
+    key: WaitTime
+
+- type: htnPrimitive
+  id: FaceHuggerPrepareSoundPrimitive
+  operator: !type:SoundOperator
+    sound: /Audio/CM-SS14/Mobs/Xenos/Facehuggers/pain.ogg
+
+- type: htnPrimitive
+  id: FaceHuggerLeapSoundPrimitive
+  operator: !type:SoundOperator
+    sound: /Audio/CM-SS14/Mobs/Xenos/Facehuggers/leap.ogg
+
+- type: htnPrimitive
+  id: FaceHuggerAttackSoundPrimitive
+  operator: !type:SoundOperator
+    sound: /Audio/CM-SS14/Mobs/Xenos/Facehuggers/attack.ogg
+
+- type: htnPrimitive
+  id: XenoWaitLandTimePrimitive
+  operator: !type:WaitOperator
+    key: StunTime

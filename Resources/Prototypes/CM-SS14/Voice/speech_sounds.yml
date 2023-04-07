@@ -1,0 +1,8 @@
+- type: speechSounds
+  id: Facehugger
+  saySound:
+    path: /Audio/CM-SS14/Mobs/Xenos/Facehuggers/idle.ogg
+  askSound:
+    path: /Audio/CM-SS14/Mobs/Xenos/Facehuggers/idle.ogg
+  exclaimSound:
+    path: /Audio/CM-SS14/Mobs/Xenos/Facehuggers/idle.ogg
