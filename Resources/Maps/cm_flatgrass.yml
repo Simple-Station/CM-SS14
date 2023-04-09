@@ -11,111 +11,21 @@ tilemap:
   4: AlmayerPlating
   5: AlmayerSteel
   6: AlmayerSteelDark
-  7: AlmayerSteelSterile
-  8: AlmayerSteelSterileGreen
-  9: AlmayerSteelSterileWhite
-  10: AlmayerWood
-  11: FloorArcadeBlue
-  12: FloorArcadeBlue2
-  13: FloorArcadeRed
-  14: FloorAsteroidCoarseSand0
-  15: FloorAsteroidCoarseSandDug
-  16: FloorAsteroidIronsand1
-  17: FloorAsteroidIronsand2
-  18: FloorAsteroidIronsand3
-  19: FloorAsteroidIronsand4
-  20: FloorAsteroidSand
-  21: FloorAsteroidTile
-  22: FloorBar
-  23: FloorBasalt
-  24: FloorBlue
-  25: FloorBlueCircuit
-  26: FloorBoxing
-  27: FloorCarpetClown
-  28: FloorCarpetOffice
   29: FloorCave
   30: FloorCaveDrought
-  31: FloorClown
-  32: FloorDark
-  33: FloorDarkDiagonal
-  34: FloorDarkDiagonalMini
-  35: FloorDarkHerringbone
-  36: FloorDarkMini
-  37: FloorDarkMono
-  38: FloorDarkOffset
-  39: FloorDarkPavement
-  40: FloorDarkPavementVertical
-  41: FloorDarkPlastic
-  42: FloorDesert
   43: FloorDirt
-  44: FloorEighties
-  45: FloorElevatorShaft
-  46: FloorFlesh
-  47: FloorFreezer
-  48: FloorGlass
-  49: FloorGold
-  50: FloorGrass
-  51: FloorGrassDark
-  52: FloorGrassJungle
   53: FloorGrassLight
-  54: FloorGreenCircuit
-  55: FloorGym
-  56: FloorHydro
   57: FloorKitchen
-  58: FloorLaundry
-  59: FloorLino
-  60: FloorLowDesert
   61: FloorMetalDiamond
-  62: FloorMime
-  63: FloorMono
   64: FloorPlanetDirt
   65: FloorPlanetGrass
-  66: FloorPlastic
-  67: FloorRGlass
-  68: FloorReinforced
-  69: FloorRockVault
-  70: FloorShowroom
-  71: FloorShuttleBlue
-  72: FloorShuttleOrange
-  73: FloorShuttlePurple
-  74: FloorShuttleRed
-  75: FloorShuttleWhite
-  76: FloorSilver
-  77: FloorSnow
-  78: FloorSteel
-  79: FloorSteelDiagonal
-  80: FloorSteelDiagonalMini
-  81: FloorSteelDirty
-  82: FloorSteelHerringbone
-  83: FloorSteelMini
-  84: FloorSteelMono
-  85: FloorSteelOffset
-  86: FloorSteelPavement
-  87: FloorSteelPavementVertical
-  88: FloorTechMaint
-  89: FloorTechMaint2
-  90: FloorTechMaint3
-  91: FloorWhite
-  92: FloorWhiteDiagonal
-  93: FloorWhiteDiagonalMini
-  94: FloorWhiteHerringbone
-  95: FloorWhiteMini
-  96: FloorWhiteMono
-  97: FloorWhiteOffset
-  98: FloorWhitePavement
-  99: FloorWhitePavementVertical
-  100: FloorWhitePlastic
-  101: FloorWood
-  102: FloorWoodTile
-  103: Lattice
   104: Plating
 entities:
 - uid: 0
   components:
   - type: MetaData
   - type: Transform
-  - index: 10
-    type: Map
+  - type: Map
   - type: PhysicsMap
   - type: Broadphase
   - type: OccluderTree
@@ -1539,7 +1449,7 @@ entities:
     parent: 0
     type: Transform
 - uid: 171
-  type: BedsheetBlue
+  type: HospitalCurtainsOpen
   components:
   - pos: -52.5,-17.5
     parent: 0
@@ -1743,7 +1653,7 @@ entities:
     parent: 0
     type: Transform
 - uid: 205
-  type: HospitalCurtainsOpen
+  type: SpawnPointMarineDelta
   components:
   - pos: -52.5,-17.5
     parent: 0
@@ -2002,7 +1912,9 @@ entities:
     type: Transform
   - solutions:
       drink:
+        temperature: 293.15
         canMix: True
+        canReact: True
         maxVol: 20
         reagents:
         - Quantity: 20
@@ -2016,7 +1928,9 @@ entities:
     type: Transform
   - solutions:
       drink:
+        temperature: 293.15
         canMix: True
+        canReact: True
         maxVol: 20
         reagents:
         - Quantity: 20
@@ -2194,6 +2108,9 @@ entities:
     type: Transform
   - solutions:
       drink:
+        temperature: 293.15
+        canMix: False
+        canReact: True
         maxVol: 50
         reagents:
         - Quantity: 50
@@ -2553,6 +2470,8 @@ entities:
   - pos: -23.5,-20.5
     parent: 0
     type: Transform
+  - enabled: True
+    type: AmbientSound
 - uid: 331
   type: GeneratorRTGDamaged
   components:
@@ -2589,6 +2508,8 @@ entities:
   - pos: -23.5,-21.5
     parent: 0
     type: Transform
+  - enabled: True
+    type: AmbientSound
 - uid: 337
   type: CableHV
   components:
@@ -2601,12 +2522,16 @@ entities:
   - pos: -24.5,-14.5
     parent: 0
     type: Transform
+  - enabled: True
+    type: AmbientSound
 - uid: 339
   type: CableHV
   components:
   - pos: -24.5,-15.5
     parent: 0
     type: Transform
+  - enabled: True
+    type: AmbientSound
 - uid: 340
   type: CableHV
   components:
@@ -2643,6 +2568,8 @@ entities:
   - pos: -24.5,-22.5
     parent: 0
     type: Transform
+  - enabled: True
+    type: AmbientSound
 - uid: 346
   type: RadiationCollector
   components:
@@ -2912,18 +2839,24 @@ entities:
   - pos: -24.5,-16.5
     parent: 0
     type: Transform
+  - enabled: True
+    type: AmbientSound
 - uid: 387
   type: CableHV
   components:
   - pos: -24.5,-17.5
     parent: 0
     type: Transform
+  - enabled: True
+    type: AmbientSound
 - uid: 388
   type: CableHV
   components:
   - pos: -24.5,-18.5
     parent: 0
     type: Transform
+  - enabled: True
+    type: AmbientSound
 - uid: 389
   type: CableHV
   components:
@@ -2966,18 +2899,24 @@ entities:
   - pos: -23.5,-19.5
     parent: 0
     type: Transform
+  - enabled: True
+    type: AmbientSound
 - uid: 396
   type: CableHV
   components:
   - pos: -25.5,-19.5
     parent: 0
     type: Transform
+  - enabled: True
+    type: AmbientSound
 - uid: 397
   type: CableHV
   components:
   - pos: -25.5,-20.5
     parent: 0
     type: Transform
+  - enabled: True
+    type: AmbientSound
 - uid: 398
   type: CableTerminal
   components:
@@ -2990,6 +2929,8 @@ entities:
   - pos: -25.5,-21.5
     parent: 0
     type: Transform
+  - enabled: True
+    type: AmbientSound
 - uid: 400
   type: Catwalk
   components:
@@ -3038,12 +2979,16 @@ entities:
   - pos: -23.5,-22.5
     parent: 0
     type: Transform
+  - enabled: True
+    type: AmbientSound
 - uid: 408
   type: CableHV
   components:
   - pos: -25.5,-22.5
     parent: 0
     type: Transform
+  - enabled: True
+    type: AmbientSound
 - uid: 409
   type: Catwalk
   components:
@@ -5418,12 +5363,16 @@ entities:
   - pos: -41.5,-25.5
     parent: 0
     type: Transform
+  - enabled: True
+    type: AmbientSound
 - uid: 781
   type: CableHV
   components:
   - pos: -41.5,-24.5
     parent: 0
     type: Transform
+  - enabled: True
+    type: AmbientSound
 - uid: 782
   type: Catwalk
   components:
@@ -5436,12 +5385,16 @@ entities:
   - pos: -41.5,-24.5
     parent: 0
     type: Transform
+  - enabled: True
+    type: AmbientSound
 - uid: 784
   type: CableMV
   components:
   - pos: -42.5,-24.5
     parent: 0
     type: Transform
+  - enabled: True
+    type: AmbientSound
 - uid: 785
   type: CableMV
   components:
@@ -5846,6 +5799,8 @@ entities:
   - pos: -40.5,-24.5
     parent: 0
     type: Transform
+  - enabled: True
+    type: AmbientSound
 - uid: 852
   type: Catwalk
   components:
@@ -6039,36 +5994,48 @@ entities:
   - pos: -4.5,-21.5
     parent: 0
     type: Transform
+  - enabled: True
+    type: AmbientSound
 - uid: 884
   type: CableHV
   components:
   - pos: -4.5,-20.5
     parent: 0
     type: Transform
+  - enabled: True
+    type: AmbientSound
 - uid: 885
   type: CableHV
   components:
   - pos: -4.5,-19.5
     parent: 0
     type: Transform
+  - enabled: True
+    type: AmbientSound
 - uid: 886
   type: CableMV
   components:
   - pos: -4.5,-20.5
     parent: 0
     type: Transform
+  - enabled: True
+    type: AmbientSound
 - uid: 887
   type: CableMV
   components:
   - pos: -4.5,-19.5
     parent: 0
     type: Transform
+  - enabled: True
+    type: AmbientSound
 - uid: 888
   type: CableMV
   components:
   - pos: -4.5,-18.5
     parent: 0
     type: Transform
+  - enabled: True
+    type: AmbientSound
 - uid: 889
   type: CableMV
   components:
@@ -6262,6 +6229,8 @@ entities:
   - pos: -23.5,-21.5
     parent: 0
     type: Transform
+  - enabled: True
+    type: AmbientSound
 - uid: 921
   type: CableApcExtension
   components:
@@ -6274,6 +6243,8 @@ entities:
   - pos: -25.5,-21.5
     parent: 0
     type: Transform
+  - enabled: True
+    type: AmbientSound
 - uid: 923
   type: CableApcExtension
   components:
@@ -6287,9 +6258,9 @@ entities:
     parent: 0
     type: Transform
 - uid: 925
-  type: SpawnPointStationEngineer
+  type: SpawnPointMarineBravo
   components:
-  - pos: -29.5,-17.5
+  - pos: -53.5,-0.5
     parent: 0
     type: Transform
 - uid: 926
@@ -6959,12 +6930,16 @@ entities:
   - pos: -4.5,-18.5
     parent: 0
     type: Transform
+  - enabled: True
+    type: AmbientSound
 - uid: 1037
   type: CableHV
   components:
   - pos: -4.5,-18.5
     parent: 0
     type: Transform
+  - enabled: True
+    type: AmbientSound
 - uid: 1038
   type: CableHV
   components:
@@ -7295,30 +7270,40 @@ entities:
   - pos: -27.5,13.5
     parent: 0
     type: Transform
+  - enabled: True
+    type: AmbientSound
 - uid: 1093
   type: CableHV
   components:
   - pos: -28.5,13.5
     parent: 0
     type: Transform
+  - enabled: True
+    type: AmbientSound
 - uid: 1094
   type: CableMV
   components:
   - pos: -28.5,13.5
     parent: 0
     type: Transform
+  - enabled: True
+    type: AmbientSound
 - uid: 1095
   type: CableMV
   components:
   - pos: -29.5,13.5
     parent: 0
     type: Transform
+  - enabled: True
+    type: AmbientSound
 - uid: 1096
   type: CableMV
   components:
   - pos: -30.5,13.5
     parent: 0
     type: Transform
+  - enabled: True
+    type: AmbientSound
 - uid: 1097
   type: SubstationBasic
   components:
@@ -8187,6 +8172,8 @@ entities:
   - pos: -29.5,13.5
     parent: 0
     type: Transform
+  - enabled: True
+    type: AmbientSound
 - uid: 1225
   type: Memorial
   components:
@@ -55457,387 +55444,147 @@ entities:
     parent: 0
     type: Transform
 - uid: 9046
-  type: SpawnPointChef
-  components:
-  - pos: -21.5,5.5
-    parent: 0
-    type: Transform
-- uid: 9047
-  type: SpawnPointSecurityOfficer
-  components:
-  - pos: -47.5,10.5
-    parent: 0
-    type: Transform
-- uid: 9048
-  type: SpawnPointSecurityOfficer
-  components:
-  - pos: -47.5,1.5
-    parent: 0
-    type: Transform
-- uid: 9049
-  type: SpawnPointSecurityOfficer
-  components:
-  - pos: -49.5,-8.5
-    parent: 0
-    type: Transform
-- uid: 9050
-  type: SpawnPointSecurityOfficer
-  components:
-  - pos: -46.5,-17.5
-    parent: 0
-    type: Transform
-- uid: 9051
-  type: SpawnPointSecurityCadet
-  components:
-  - pos: -52.5,-15.5
-    parent: 0
-    type: Transform
-- uid: 9052
-  type: SpawnPointSecurityCadet
-  components:
-  - pos: -53.5,-15.5
-    parent: 0
-    type: Transform
-- uid: 9053
-  type: SpawnPointSecurityCadet
-  components:
-  - pos: -52.5,-17.5
-    parent: 0
-    type: Transform
-- uid: 9054
-  type: SpawnPointSecurityCadet
-  components:
-  - pos: -53.5,-17.5
-    parent: 0
-    type: Transform
-- uid: 9055
-  type: SpawnPointSecurityCadet
-  components:
-  - pos: -52.5,-19.5
-    parent: 0
-    type: Transform
-- uid: 9056
-  type: SpawnPointSecurityCadet
-  components:
-  - pos: -53.5,-19.5
-    parent: 0
-    type: Transform
-- uid: 9057
-  type: SpawnPointSecurityCadet
-  components:
-  - pos: -54.5,-10.5
-    parent: 0
-    type: Transform
-- uid: 9058
-  type: SpawnPointSecurityCadet
-  components:
-  - pos: -55.5,-10.5
-    parent: 0
-    type: Transform
-- uid: 9059
-  type: SpawnPointSecurityCadet
-  components:
-  - pos: -54.5,-8.5
-    parent: 0
-    type: Transform
-- uid: 9060
-  type: SpawnPointSecurityCadet
-  components:
-  - pos: -55.5,-8.5
-    parent: 0
-    type: Transform
-- uid: 9061
-  type: SpawnPointSecurityCadet
-  components:
-  - pos: -54.5,-6.5
-    parent: 0
-    type: Transform
-- uid: 9062
-  type: SpawnPointSecurityCadet
-  components:
-  - pos: -55.5,-6.5
-    parent: 0
-    type: Transform
-- uid: 9063
-  type: SpawnPointSecurityCadet
-  components:
-  - pos: -53.5,-0.5
-    parent: 0
-    type: Transform
-- uid: 9064
-  type: SpawnPointSecurityCadet
+  type: SpawnPointMarineBravo
   components:
   - pos: -54.5,-0.5
     parent: 0
     type: Transform
-- uid: 9065
-  type: SpawnPointSecurityCadet
+- uid: 9047
+  type: SpawnPointMarineCharlie
+  components:
+  - pos: -55.5,-10.5
+    parent: 0
+    type: Transform
+- uid: 9048
+  type: SpawnPointMarineBravo
   components:
   - pos: -54.5,1.5
     parent: 0
     type: Transform
-- uid: 9066
-  type: SpawnPointSecurityCadet
+- uid: 9049
+  type: SpawnPointMarineBravo
   components:
   - pos: -53.5,1.5
     parent: 0
     type: Transform
-- uid: 9067
-  type: SpawnPointSecurityCadet
+- uid: 9050
+  type: SpawnPointMarineBravo
   components:
   - pos: -53.5,3.5
     parent: 0
     type: Transform
-- uid: 9068
-  type: SpawnPointSecurityCadet
+- uid: 9051
+  type: SpawnPointMarineBravo
   components:
   - pos: -54.5,3.5
     parent: 0
     type: Transform
-- uid: 9069
-  type: SpawnPointSecurityCadet
+- uid: 9052
+  type: SpawnPointMarineCharlie
+  components:
+  - pos: -54.5,-10.5
+    parent: 0
+    type: Transform
+- uid: 9053
+  type: SpawnPointMarineCharlie
+  components:
+  - pos: -55.5,-8.5
+    parent: 0
+    type: Transform
+- uid: 9054
+  type: SpawnPointMarineCharlie
+  components:
+  - pos: -54.5,-8.5
+    parent: 0
+    type: Transform
+- uid: 9055
+  type: SpawnPointMarineCharlie
+  components:
+  - pos: -55.5,-6.5
+    parent: 0
+    type: Transform
+- uid: 9056
+  type: SpawnPointMarineCharlie
+  components:
+  - pos: -54.5,-6.5
+    parent: 0
+    type: Transform
+- uid: 9057
+  type: SpawnPointMarineDelta
+  components:
+  - pos: -53.5,-19.5
+    parent: 0
+    type: Transform
+- uid: 9058
+  type: SpawnPointMarineDelta
+  components:
+  - pos: -52.5,-19.5
+    parent: 0
+    type: Transform
+- uid: 9059
+  type: SpawnPointMarineDelta
+  components:
+  - pos: -53.5,-17.5
+    parent: 0
+    type: Transform
+- uid: 9060
+  type: BedsheetBlue
+  components:
+  - pos: -52.5,-17.5
+    parent: 0
+    type: Transform
+- uid: 9061
+  type: SpawnPointMarineDelta
+  components:
+  - pos: -53.5,-15.5
+    parent: 0
+    type: Transform
+- uid: 9062
+  type: SpawnPointMarineDelta
+  components:
+  - pos: -52.5,-15.5
+    parent: 0
+    type: Transform
+- uid: 9063
+  type: SpawnPointMarineAlpha
   components:
   - pos: -53.5,8.5
     parent: 0
     type: Transform
-- uid: 9070
-  type: SpawnPointSecurityCadet
+- uid: 9064
+  type: SpawnPointMarineAlpha
   components:
   - pos: -52.5,8.5
     parent: 0
     type: Transform
-- uid: 9071
-  type: SpawnPointCaptain
-  components:
-  - pos: -33.5,23.5
-    parent: 0
-    type: Transform
-- uid: 9072
-  type: SpawnPointSecurityCadet
+- uid: 9065
+  type: SpawnPointMarineAlpha
   components:
   - pos: -52.5,10.5
     parent: 0
     type: Transform
-- uid: 9073
-  type: SpawnPointSecurityCadet
+- uid: 9066
+  type: SpawnPointMarineAlpha
   components:
   - pos: -53.5,10.5
     parent: 0
     type: Transform
-- uid: 9074
-  type: SpawnPointSecurityCadet
+- uid: 9067
+  type: SpawnPointMarineAlpha
   components:
   - pos: -53.5,12.5
     parent: 0
     type: Transform
-- uid: 9075
-  type: SpawnPointSecurityCadet
+- uid: 9068
+  type: SpawnPointMarineAlpha
   components:
   - pos: -52.5,12.5
-    parent: 0
-    type: Transform
-- uid: 9076
-  type: SpawnPointChiefEngineer
-  components:
-  - pos: -33.5,21.5
-    parent: 0
-    type: Transform
-- uid: 9077
-  type: SpawnPointChiefMedicalOfficer
-  components:
-  - pos: -33.5,25.5
-    parent: 0
-    type: Transform
-- uid: 9078
-  type: SpawnPointResearchDirector
-  components:
-  - pos: -33.5,24.5
-    parent: 0
-    type: Transform
-- uid: 9079
-  type: SpawnPointHeadOfSecurity
-  components:
-  - pos: -33.5,22.5
-    parent: 0
-    type: Transform
-- uid: 9080
-  type: SpawnPointStationEngineer
-  components:
-  - pos: -30.5,-17.5
     parent: 0
     type: Transform
 - uid: 9081
   type: CableApcExtension
   components:
   - pos: -28.5,-21.5
-    parent: 0
-    type: Transform
-- uid: 9082
-  type: SpawnPointStationEngineer
-  components:
-  - pos: -30.5,-18.5
-    parent: 0
-    type: Transform
-- uid: 9083
-  type: SpawnPointAssistant
-  components:
-  - pos: -42.5,1.5
-    parent: 0
-    type: Transform
-- uid: 9084
-  type: SpawnPointAssistant
-  components:
-  - pos: -43.5,0.5
-    parent: 0
-    type: Transform
-- uid: 9085
-  type: SpawnPointStationEngineer
-  components:
-  - pos: -29.5,-18.5
-    parent: 0
-    type: Transform
-- uid: 9086
-  type: SpawnPointAssistant
-  components:
-  - pos: -39.5,-7.5
-    parent: 0
-    type: Transform
-- uid: 9087
-  type: SpawnPointAssistant
-  components:
-  - pos: -41.5,-10.5
-    parent: 0
-    type: Transform
-- uid: 9088
-  type: SpawnPointAssistant
-  components:
-  - pos: -37.5,-24.5
-    parent: 0
-    type: Transform
-- uid: 9089
-  type: SpawnPointAssistant
-  components:
-  - pos: -41.5,-18.5
-    parent: 0
-    type: Transform
-- uid: 9090
-  type: SpawnPointAssistant
-  components:
-  - pos: -40.5,7.5
-    parent: 0
-    type: Transform
-- uid: 9091
-  type: SpawnPointAssistant
-  components:
-  - pos: -41.5,14.5
-    parent: 0
-    type: Transform
-- uid: 9092
-  type: SpawnPointAssistant
-  components:
-  - pos: -33.5,6.5
-    parent: 0
-    type: Transform
-- uid: 9093
-  type: SpawnPointAssistant
-  components:
-  - pos: -33.5,7.5
-    parent: 0
-    type: Transform
-- uid: 9094
-  type: SpawnPointAssistant
-  components:
-  - pos: -33.5,5.5
-    parent: 0
-    type: Transform
-- uid: 9095
-  type: SpawnPointAssistant
-  components:
-  - pos: -30.5,5.5
-    parent: 0
-    type: Transform
-- uid: 9096
-  type: SpawnPointAssistant
-  components:
-  - pos: -30.5,6.5
-    parent: 0
-    type: Transform
-- uid: 9097
-  type: SpawnPointAssistant
-  components:
-  - pos: -30.5,7.5
-    parent: 0
-    type: Transform
-- uid: 9098
-  type: SpawnPointAssistant
-  components:
-  - pos: -28.5,3.5
-    parent: 0
-    type: Transform
-- uid: 9099
-  type: SpawnPointAssistant
-  components:
-  - pos: -28.5,2.5
-    parent: 0
-    type: Transform
-- uid: 9100
-  type: SpawnPointAssistant
-  components:
-  - pos: -28.5,1.5
-    parent: 0
-    type: Transform
-- uid: 9101
-  type: SpawnPointAssistant
-  components:
-  - pos: -30.5,1.5
-    parent: 0
-    type: Transform
-- uid: 9102
-  type: SpawnPointAssistant
-  components:
-  - pos: -30.5,2.5
-    parent: 0
-    type: Transform
-- uid: 9103
-  type: SpawnPointAssistant
-  components:
-  - pos: -30.5,3.5
-    parent: 0
-    type: Transform
-- uid: 9104
-  type: SpawnPointAssistant
-  components:
-  - pos: -25.5,5.5
-    parent: 0
-    type: Transform
-- uid: 9105
-  type: SpawnPointAssistant
-  components:
-  - pos: -25.5,6.5
-    parent: 0
-    type: Transform
-- uid: 9106
-  type: SpawnPointAssistant
-  components:
-  - pos: -25.5,7.5
-    parent: 0
-    type: Transform
-- uid: 9107
-  type: SpawnPointAssistant
-  components:
-  - pos: -28.5,7.5
-    parent: 0
-    type: Transform
-- uid: 9108
-  type: SpawnPointAssistant
-  components:
-  - pos: -28.5,6.5
-    parent: 0
-    type: Transform
-- uid: 9109
-  type: SpawnPointAssistant
-  components:
-  - pos: -28.5,5.5
     parent: 0
     type: Transform
 - uid: 9110
@@ -56919,12 +56666,16 @@ entities:
   - pos: -49.5,-34.5
     parent: 0
     type: Transform
+  - enabled: True
+    type: AmbientSound
 - uid: 9289
   type: CableApcExtension
   components:
   - pos: -50.5,-34.5
     parent: 0
     type: Transform
+  - enabled: True
+    type: AmbientSound
 - uid: 9290
   type: CableApcExtension
   components:

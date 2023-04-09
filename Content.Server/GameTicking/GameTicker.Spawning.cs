@@ -24,6 +24,8 @@ namespace Content.Server.GameTicking
 {
     public sealed partial class GameTicker
     {
+        private int _marineTeam = 1;
+
         private const string ObserverPrototypeName = "MobObserver";
 
         /// <summary>
@@ -34,6 +36,11 @@ namespace Content.Server.GameTicking
 
         // Mainly to avoid allocations.
         private readonly List<EntityCoordinates> _possiblePositions = new();
+
+        private void Reset()
+        {
+            _marineTeam = 1;
+        }
 
         private void SpawnPlayers(List<IPlayerSession> readyPlayers, Dictionary<NetUserId, HumanoidCharacterProfile> profiles, bool force)
         {
@@ -144,6 +151,34 @@ namespace Content.Server.GameTicking
             {
                 PlayerJoinGame(player);
                 return;
+            }
+
+            // Hardcoded chunk to place Marines in round-robin style teams.
+            // This is unlikely to be needed for other jobs, but if it is, yell at me and I'll make it more generic.
+            // - @Pspritechologist
+
+            if (jobId == "Marine")
+            {
+
+                switch (_marineTeam)
+                {
+                    case 1:
+                        jobId = "MarineAlpha";
+                        break;
+                    case 2:
+                        jobId = "MarineBravo";
+                        break;
+                    case 3:
+                        jobId = "MarineCharlie";
+                        break;
+                    case 4:
+                        jobId = "MarineDelta";
+                        break;
+                }
+
+                _marineTeam++;
+
+                if (_marineTeam > 4) _marineTeam = 1;
             }
 
             // Figure out job restrictions

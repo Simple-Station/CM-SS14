@@ -6,8 +6,8 @@
   components:
   - type: InputMover
   - type: MobMover
-  - type: Loadout
-    prototypes: [PassengerGear]
+  # - type: Loadout
+  #   prototypes: [PassengerGear]
   - type: Faction
     factions:
     - NanoTrasen

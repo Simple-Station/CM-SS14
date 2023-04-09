@@ -1,0 +1,49 @@
+- type: job
+  id: Drone
+  name: xeno-drone-name
+  description: xeno-drone-description
+  department: Xenos
+  playTimeTracker: RoleXenoDrone
+  icon: "ResearchAssistant"
+  supervisors: job-supervisors-xeno-drone
+  jobEntity: MobXenoDrone
+
+- type: job
+  id: Runner
+  name: xeno-runner-name
+  description: xeno-runner-description
+  department: Xenos
+  playTimeTracker: RoleXenoRunner
+  icon: "ResearchAssistant"
+  supervisors: job-supervisors-xeno-runner
+  jobEntity: MobXenoRunner
+
+- type: job
+  id: Sentinel
+  name: xeno-sentinel-name
+  description: xeno-sentinel-description
+  department: Xenos
+  playTimeTracker: RoleXenoSentinel
+  icon: "ResearchAssistant"
+  supervisors: job-supervisors-xeno-sentinel
+  jobEntity: MobXenoSentinel
+
+- type: job
+  id: Defender
+  name: xeno-defender-name
+  description: xeno-defender-description
+  department: Xenos
+  playTimeTracker: RoleXenoDefender
+  icon: "ResearchAssistant"
+  supervisors: job-supervisors-xeno-defender
+  jobEntity: MobXenoDefender
+
+- type: job
+  id: Queen
+  name: xeno-queen-name
+  description: xeno-queen-description
+  department: Xenos
+  playTimeTracker: RoleXenoQueen
+  icon: "Scientist"
+  supervisors: job-supervisors-xeno-queen
+  jobEntity: MobXenoQueen
