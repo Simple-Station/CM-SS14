@@ -66,11 +66,6 @@ namespace Content.Server.GameTicking
             SubscribeLocalEvent<RoundRestartCleanupEvent>(Reset);
         }
 
-        private void Reset(RoundRestartCleanupEvent ev)
-        {
-            throw new NotImplementedException();
-        }
-
         public void PostInitialize()
         {
             DebugTools.Assert(_initialized);

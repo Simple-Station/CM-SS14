@@ -37,7 +37,7 @@ namespace Content.Server.GameTicking
         // Mainly to avoid allocations.
         private readonly List<EntityCoordinates> _possiblePositions = new();
 
-        private void Reset()
+        private void Reset(RoundRestartCleanupEvent args)
         {
             _marineTeam = 1;
         }
