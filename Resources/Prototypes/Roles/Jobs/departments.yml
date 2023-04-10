@@ -1,6 +1,6 @@
 - type: department
-  id: Command
-  description: department-Command-description
+  id: Marines
+  description: team-marines-description
   color: "#334E6D"
   roles:
   - Marine
@@ -10,8 +10,8 @@
   - MarineDelta
 
 - type: department
-  id: Science
-  description: department-Command-description
+  id: Xenos
+  description: team-xenos-description
   color: "#D381C9"
   roles:
   - Drone

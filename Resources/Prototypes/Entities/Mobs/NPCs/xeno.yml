@@ -13,15 +13,15 @@
     disarm: null
   - type: InputMover
   - type: MobMover
-  - type: HTN
-    rootTask: XenoCompound
-    blackboard:
-      NavInteract: !type:Bool
-        true
-      NavPry: !type:Bool
-        true
-      NavSmash: !type:Bool
-        true
+  # - type: HTN
+  #   rootTask: XenoCompound
+  #   blackboard:
+  #     NavInteract: !type:Bool
+  #       true
+  #     NavPry: !type:Bool
+  #       true
+  #     NavSmash: !type:Bool
+  #       true
   - type: Tool
     speed: 1.5
     qualities:
@@ -38,10 +38,10 @@
   - type: Hands
   - type: Sprite
     drawdepth: Mobs
-    sprite: CM-SS14/Mobs/Xenos/Burrower/burrower_standard.rsi
+    sprite: CM-SS14/Mobs/Xenos/Drone/standard.rsi
     layers:
     - map: ["enum.DamageStateVisualLayers.Base"]
-      state: running
+      state: walking
   - type: Physics
     bodyType: Dynamic
   - type: Fixtures
@@ -116,11 +116,11 @@
   components:
   - type: Sprite
     drawdepth: Mobs
-    sprite: CM-SS14/Mobs/Xenos/Drone/drone_standard.rsi
+    sprite: CM-SS14/Mobs/Xenos/Drone/standard.rsi
     offset: 0,0.2
     layers:
     - map: ["enum.DamageStateVisualLayers.Base"]
-      state: running
+      state: walking
   - type: MobState
     allowedStates:
       - Alive
@@ -158,11 +158,11 @@
   components:
   - type: Sprite
     drawdepth: Mobs
-    sprite: CM-SS14/Mobs/Xenos/Drone/drone_standard.rsi
+    sprite: CM-SS14/Mobs/Xenos/Defender/standard.rsi
     offset: 0,0.2
     layers:
     - map: ["enum.DamageStateVisualLayers.Base"]
-      state: running
+      state: walking
   - type: MobState
     allowedStates:
       - Alive
@@ -200,11 +200,11 @@
   components:
   - type: Sprite
     drawdepth: Mobs
-    sprite: CM-SS14/Mobs/Xenos/Drone/drone_standard.rsi
+    sprite: CM-SS14/Mobs/Xenos/Sentinel/standard.rsi
     offset: 0,0.2
     layers:
     - map: ["enum.DamageStateVisualLayers.Base"]
-      state: running
+      state: walking
   - type: MobState
     allowedStates:
       - Alive
@@ -242,11 +242,11 @@
   components:
   - type: Sprite
     drawdepth: Mobs
-    sprite: CM-SS14/Mobs/Xenos/Runner/runner_standard.rsi
+    sprite: CM-SS14/Mobs/Xenos/Runner/standard.rsi
     offset: 0,0.6
     layers:
     - map: ["enum.DamageStateVisualLayers.Base"]
-      state: running
+      state: walking
   - type: MobState
     allowedStates:
       - Alive
@@ -270,7 +270,7 @@
     fixtures:
     - shape:
         !type:PhysShapeCircle
-        radius: 0.35
+        radius: 0.32
       density: 235
       mask:
       - MobMask
@@ -294,11 +294,11 @@
   components:
   - type: Sprite
     drawdepth: Mobs
-    sprite: CM-SS14/Mobs/Xenos/Queen/queen_standard.rsi
+    sprite: CM-SS14/Mobs/Xenos/Queen/standard.rsi
     offset: 0,0.4
     layers:
     - map: ["enum.DamageStateVisualLayers.Base"]
-      state: running
+      state: walking
   - type: MobState
     allowedStates:
       - Alive
@@ -320,7 +320,7 @@
     baseSprintSpeed : 3.8
   - type: SlowOnDamage
     speedModifierThresholds:
-      1000: 0.7
+      525: 0.7
   - type: Fixtures
     fixtures:
     - shape:
@@ -343,7 +343,7 @@
 #     offset: 0,0.4
 #     layers:
 #     - map: ["enum.DamageStateVisualLayers.Base"]
-#       state: running
+#       state: walking
 #   - type: MobState
 #     allowedStates:
 #       - Alive
@@ -379,7 +379,7 @@
 #     offset: 0,0.5
 #     layers:
 #     - map: ["enum.DamageStateVisualLayers.Base"]
-#       state: running
+#       state: walking
 #   - type: MobState
 #     allowedStates:
 #       - Alive
@@ -423,7 +423,7 @@
 #     offset: 0,0.3
 #     layers:
 #     - map: ["enum.DamageStateVisualLayers.Base"]
-#       state: running
+#       state: walking
 #   - type: MobState
 #     allowedStates:
 #       - Alive
@@ -448,85 +448,85 @@
 #       layer:
 #       - MobLayer
 
-- type: entity
-  name: space adder
-  parent: SimpleSpaceMobBase
-  id: MobPurpleSnake
-  description: A menacing purple snake from Kepler-283c.
-  components:
-  - type: Sprite
-    drawdepth: Mobs
-    sprite: CM-SS14/Mobs/Xenos/Purple_snake/purple_snake_standard.rsi
-    layers:
-    - map: ["enum.DamageStateVisualLayers.Base"]
-      state: purple_snake
-  - type: Appearance
-  - type: DamageStateVisuals
-    states:
-      Alive:
-        Base: purple_snake
-      Critical:
-        Base: dead_purple_snake
-      Dead:
-        Base: dead_purple_snake
-  - type: Grammar
-    attributes:
-      proper: true
-      gender: male
-  - type: InputMover
-  - type: MobMover
-  - type: HTN
-    rootTask: SimpleHostileCompound
-  - type: Faction
-    factions:
-    - Xeno
-  - type: MeleeWeapon
-    hidden: true
-    angle: 0
-    animation: WeaponArcBite
-    damage:
-      types:
-        Piercing: 5
-  - type: SolutionContainerManager
-    solutions:
-      melee:
-        reagents:
-        - ReagentId: Toxin
-          Quantity: 50
-  - type: MeleeChemicalInjector
-    solution: melee
-  - type: Fixtures
-    fixtures:
-    - shape:
-        !type:PhysShapeCircle
-        radius: 0.35
-      density: 25
-      mask:
-      - MobMask
-      layer:
-      - MobLayer
+# - type: entity
+#   name: space adder
+#   parent: SimpleSpaceMobBase
+#   id: MobPurpleSnake
+#   description: A menacing purple snake from Kepler-283c.
+#   components:
+#   - type: Sprite
+#     drawdepth: Mobs
+#     sprite: CM-SS14/Mobs/Xenos/Purple_snake/purple_snake_standard.rsi
+#     layers:
+#     - map: ["enum.DamageStateVisualLayers.Base"]
+#       state: purple_snake
+#   - type: Appearance
+#   - type: DamageStateVisuals
+#     states:
+#       Alive:
+#         Base: purple_snake
+#       Critical:
+#         Base: dead_purple_snake
+#       Dead:
+#         Base: dead_purple_snake
+#   - type: Grammar
+#     attributes:
+#       proper: true
+#       gender: male
+#   - type: InputMover
+#   - type: MobMover
+#   - type: HTN
+#     rootTask: SimpleHostileCompound
+#   - type: Faction
+#     factions:
+#     - Xeno
+#   - type: MeleeWeapon
+#     hidden: true
+#     angle: 0
+#     animation: WeaponArcBite
+#     damage:
+#       types:
+#         Piercing: 5
+#   - type: SolutionContainerManager
+#     solutions:
+#       melee:
+#         reagents:
+#         - ReagentId: Toxin
+#           Quantity: 50
+#   - type: MeleeChemicalInjector
+#     solution: melee
+#   - type: Fixtures
+#     fixtures:
+#     - shape:
+#         !type:PhysShapeCircle
+#         radius: 0.35
+#       density: 25
+#       mask:
+#       - MobMask
+#       layer:
+#       - MobLayer
 
-- type: entity
-  name: space adder
-  parent: MobPurpleSnake
-  id: MobSmallPurpleSnake
-  suffix: small
-  description: A smaller version of the menacing purple snake from Kepler-283c.
-  components:
-  - type: Sprite
-    drawdepth: Mobs
-    sprite: CM-SS14/Mobs/Xenos/Purple_snake/purple_snake_standard.rsi
-    layers:
-    - map: ["enum.DamageStateVisualLayers.Base"]
-      state: small_purple_snake
-  - type: Appearance
-  - type: DamageStateVisuals
-    states:
-      Alive:
-        Base: small_purple_snake
-      Critical:
-        Base: dead_small_purple_snake
-      Dead:
-        Base: dead_small_purple_snake
-  - type: SolutionTransfer
-    maxTransferAmount: 1
+# - type: entity
+#   name: space adder
+#   parent: MobPurpleSnake
+#   id: MobSmallPurpleSnake
+#   suffix: small
+#   description: A smaller version of the menacing purple snake from Kepler-283c.
+#   components:
+#   - type: Sprite
+#     drawdepth: Mobs
+#     sprite: CM-SS14/Mobs/Xenos/Purple_snake/purple_snake_standard.rsi
+#     layers:
+#     - map: ["enum.DamageStateVisualLayers.Base"]
+#       state: small_purple_snake
+#   - type: Appearance
+#   - type: DamageStateVisuals
+#     states:
+#       Alive:
+#         Base: small_purple_snake
+#       Critical:
+#         Base: dead_small_purple_snake
+#       Dead:
+#         Base: dead_small_purple_snake
+#   - type: SolutionTransfer
+#     maxTransferAmount: 1

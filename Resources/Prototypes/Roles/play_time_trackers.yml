@@ -5,9 +5,6 @@
 
 # Xenos
 - type: playTimeTracker
-  id: XenoOverall
-
-- type: playTimeTracker
   id: RoleXenoDrone
 
 - type: playTimeTracker
@@ -24,9 +21,8 @@
 
 
 # Marines
-
 - type: playTimeTracker
-  id: MarineOverall
+  id: RoleMarine
 
 - type: playTimeTracker
   id: RoleMarineSquadLeader
