@@ -17,8 +17,16 @@
     quickEquip: false
     slots:
     - Back
+  - type: Wieldable
+    weildTime: 0.5
   - type: AmmoCounter
   - type: Gun
+    maxAngle: 100 #in degrees
+    minAngle: 10 #in degrees
+    angleIncrease: 70 #in degrees: pistol 5 smg 9 rifle 15
+    minAngleWeildedMultiplier: 0.5
+    angleIncreaseWeildedMultiplier: 0.05 # the poucentage left of the spray angle gradual spread after the operation
+    recoilStrength: 6
     fireRate: 1
     selectedMode: SemiAuto
     availableModes:
@@ -101,4 +109,21 @@
       tags:
         - CartridgeAntiMateriel
     capacity: 1
-    proto: CartridgeAntiMateriel
+    proto: CartridgeAntiMaterial
+
+- type: entity
+  name: M42A
+  parent: BaseWeaponSniper
+  id: WeaponSniperM42A
+  description: A high power sniper rifle, this weapon deals a considerable amount of damage per bullet and is capable of attacking and hitting targets at extreme ranges. Uses .60 anti-material ammo.
+  components:
+  - type: Sprite
+    sprite: CM-SS14/Objects/Weapons/Guns/Snipers/M42A.rsi
+  - type: Clothing
+    sprite: CM-SS14/Objects/Weapons/Guns/Snipers/M42A.rsi
+  - type: BallisticAmmoProvider
+    whitelist:
+      tags:
+      - CartridgeAntiMaterial
+    capacity: 5
+    proto: CartridgeAntiMaterial
