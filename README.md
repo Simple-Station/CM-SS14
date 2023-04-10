@@ -53,7 +53,7 @@ Refer to [the space wizards guide](https://docs.spacestation14.io/getting-starte
 >        - [X] Shotgun.
 >        - [X] SMG.
 >        - [ ] Flamethrower.
->        - [ ] Sniper?
+>        - [X] Sniper? (shid)
 >        - [ ] Mounted weapon.
 >        - [ ] Grenades.
 
