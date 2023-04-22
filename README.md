@@ -57,6 +57,8 @@ Refer to [the space wizards guide](https://docs.spacestation14.io/getting-starte
 >        - [ ] Mounted weapon.
 >        - [ ] Grenades.
 
+>    - [ ] Finish basic ammo.
+
 >    - [ ] Custom armor.
 >        - [ ] Leightweight, medium, and heavy armor.
 >        - [ ] Custom armor textures.
