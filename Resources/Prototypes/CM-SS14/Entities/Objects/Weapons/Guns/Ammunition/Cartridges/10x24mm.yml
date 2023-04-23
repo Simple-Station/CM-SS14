@@ -1,0 +1,73 @@
+- type: entity
+  id: BaseCartridge10x24mm
+  name: cartridge (10x24mm rifle)
+  parent: BaseCartridge
+  abstract: true
+  components:
+    - type: Tag
+      tags:
+        - Cartridge
+        - Cartridge10x24mm
+    # Change the bulletrifle prototype to the one for 10x24mm rifle for new damage values
+    - type: CartridgeAmmo
+      proto: Bullet10x24mm
+    - type: Sprite
+      netsync: false
+      sprite: CM-SS14/Objects/Weapons/Guns/Ammunition/Casings/10x24mm.rsi
+      layers:
+        - state: base_std
+          map: ["enum.AmmoVisualLayers.Base"]
+    - type: Appearance
+    - type: SpentAmmoVisuals
+      state: base_std
+      suffix: false
+    - type: StaticPrice
+      price: 10
+
+- type: entity
+  id: Cartridge10x24mm
+  name: cartridge (10x24mm rifle)
+  parent: BaseCartridge10x24mm
+  components:
+    - type: CartridgeAmmo
+      proto: Bullet10x24mm
+    - type: Sprite
+      netsync: false
+      sprite: CM-SS14/Objects/Weapons/Guns/Ammunition/Casings/10x24mm.rsi
+      layers:
+      - state: base_std
+        map: ["enum.AmmoVisualLayers.Base"]
+    - type: SpentAmmoVisuals
+      state: base_std
+
+- type: entity
+  id: Cartridge10x24mmAP
+  name: cartridge (10x24mm rifle armor-piercing)
+  parent: BaseCartridge10x24mm
+  components:
+    - type: CartridgeAmmo
+      proto: Bullet10x24mmAP
+    - type: Sprite
+      netsync: false
+      sprite: CM-SS14/Objects/Weapons/Guns/Ammunition/Casings/10x24mm.rsi
+      layers:
+      - state: base_ap
+        map: ["enum.AmmoVisualLayers.Base"]
+    - type: SpentAmmoVisuals
+      state: base_std
+
+- type: entity
+  id: Cartridge10x24mmIncendiary
+  name: cartridge (10x24mm rifle incendiary)
+  parent: BaseCartridge10x24mm
+  components:
+    - type: CartridgeAmmo
+      proto: Bullet10x24mmIC
+    - type: Sprite
+      netsync: false
+      sprite: CM-SS14/Objects/Weapons/Guns/Ammunition/Casings/10x24mm.rsi
+      layers:
+        - state: base_ic
+          map: ["enum.AmmoVisualLayers.Base"]
+    - type: SpentAmmoVisuals
+      state: base_std

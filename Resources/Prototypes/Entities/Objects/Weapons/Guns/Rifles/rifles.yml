@@ -196,7 +196,7 @@
   name: M41A-MK2
   parent: BaseWeaponRifle
   id: WeaponRifleM41A
-  description: Standard issue combat rifle utilized by the United States Colonial Marine Corps. Uses .20 rifle ammo.
+  description: Standard issue combat rifle utilized by the United States Colonial Marine Corps. Uses 10x24mm rifle ammo.
   components:
   - type: Sprite
     sprite: CM-SS14/Objects/Weapons/Guns/Rifles/M41A_MK2_jungle.rsi
@@ -221,20 +221,20 @@
     slots:
       gun_magazine:
         name: Magazine
-        startingItem: MagazineRifle
+        startingItem: MagazineM41A
         insertSound: /Audio/CM-SS14/Weapons/Guns/MagIn/m41_reload.ogg
         ejectSound: /Audio/CM-SS14/Weapons/Guns/MagOut/m41_unload.ogg
         priority: 2
         whitelist:
           tags:
-            - MagazineRifle
+            - MagazineM41A
       gun_chamber:
         name: Chamber
-        startingItem: CartridgeRifle
+        startingItem: Cartridge10x24mm
         priority: 1
         whitelist:
           tags:
-            - CartridgeRifle
+            - Cartridge10x24mm
   - type: ContainerContainer
     containers:
       gun_magazine: !type:ContainerSlot
