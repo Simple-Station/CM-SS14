@@ -4,6 +4,7 @@
   description: xeno-drone-description
   department: Xenos
   playTimeTracker: RoleXenoDrone
+  startingGear: XenoGear
   icon: "ResearchAssistant"
   supervisors: job-supervisors-xeno-drone
   jobEntity: MobXenoDrone
@@ -14,6 +15,7 @@
   description: xeno-runner-description
   department: Xenos
   playTimeTracker: RoleXenoRunner
+  startingGear: XenoGear
   icon: "ResearchAssistant"
   supervisors: job-supervisors-xeno-runner
   jobEntity: MobXenoRunner
@@ -24,6 +26,7 @@
   description: xeno-sentinel-description
   department: Xenos
   playTimeTracker: RoleXenoSentinel
+  startingGear: XenoGear
   icon: "ResearchAssistant"
   supervisors: job-supervisors-xeno-sentinel
   jobEntity: MobXenoSentinel
@@ -34,6 +37,7 @@
   description: xeno-defender-description
   department: Xenos
   playTimeTracker: RoleXenoDefender
+  startingGear: XenoGear
   icon: "ResearchAssistant"
   supervisors: job-supervisors-xeno-defender
   jobEntity: MobXenoDefender
@@ -44,6 +48,14 @@
   description: xeno-queen-description
   department: Xenos
   playTimeTracker: RoleXenoQueen
+  startingGear: XenoGear
   icon: "Scientist"
   supervisors: job-supervisors-xeno-queen
   jobEntity: MobXenoQueen
+
+#For the character preview
+- type: startingGear
+  id: XenoGear
+  equipment:
+    head: ClothingHeadXeno
+    outerClothing: ClothingOuterSuitXeno
