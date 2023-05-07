@@ -65,6 +65,17 @@
   parent: BaseTarget
   description: A shooting target. This one is a syndicate agent.
   components:
+  - type: Armor
+    modifiers:
+      flatReductions:
+        Piercing: 50
+      coefficients:
+        Blunt: 0.9
+        Slash: 0.9
+        Piercing: 0.9
+        Heat: 0.2
+        Radiation: 0.25
+        Caustic: 0.85
   - type: Sprite
     sprite: Objects/Specific/Security/target.rsi
     state: target_s

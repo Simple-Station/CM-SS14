@@ -37,6 +37,11 @@ namespace Content.Shared.Damage
         [IncludeDataField(customTypeSerializer: typeof(DamageSpecifierDictionarySerializer), readOnly: true)]
         public Dictionary<string, FixedPoint2> DamageDict { get; set; } = new();
 
+        [JsonIgnore]
+        [ViewVariables(VVAccess.ReadWrite)]
+        [DataField("armorPenetration")]
+        public float ArmorPenetration { get; set; } = 0f;
+
         /// <summary>
         ///     Sum of the damage values.
         /// </summary>
@@ -116,7 +121,10 @@ namespace Content.Shared.Damage
 
                 if (modifierSet.FlatReduction.TryGetValue(entry.Key, out var reduction))
                 {
-                    newValue -= reduction;
+                    Logger.DebugS("damage", $"Flat reduction of {reduction} for {entry.Key}.");
+                    newValue -= Math.Max(reduction - newDamage.ArmorPenetration, 0);
+                    Logger.DebugS("damage", $"New value is {newValue}.");
+                    Logger.DebugS("damage", $"Armor penetration is {newDamage.ArmorPenetration}.");
                     if (newValue <= 0)
                     {
                         // flat reductions cannot heal you

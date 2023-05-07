@@ -22,6 +22,7 @@ namespace Content.Server.Armor
             base.Initialize();
 
             SubscribeLocalEvent<ArmorComponent, InventoryRelayedEvent<DamageModifyEvent>>(OnDamageModify);
+            SubscribeLocalEvent<ArmorComponent, DamageModifyEvent>(OnDamageModifyDirect);
             SubscribeLocalEvent<ArmorComponent, GetVerbsEvent<ExamineVerb>>(OnArmorVerbExamine);
             SubscribeLocalEvent<ArmorComponent, PriceCalculationEvent>(GetArmorPrice);
         }
@@ -65,6 +66,11 @@ namespace Content.Server.Armor
         private void OnDamageModify(EntityUid uid, ArmorComponent component, InventoryRelayedEvent<DamageModifyEvent> args)
         {
             args.Args.Damage = DamageSpecifier.ApplyModifierSet(args.Args.Damage, component.Modifiers);
+        }
+
+        private void OnDamageModifyDirect(EntityUid uid, ArmorComponent component, DamageModifyEvent args)
+        {
+            args.Damage = DamageSpecifier.ApplyModifierSet(args.Damage, component.Modifiers);
         }
 
         private void OnArmorVerbExamine(EntityUid uid, ArmorComponent component, GetVerbsEvent<ExamineVerb> args)

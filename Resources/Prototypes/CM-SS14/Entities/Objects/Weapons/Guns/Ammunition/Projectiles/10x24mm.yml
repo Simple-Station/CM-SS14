@@ -17,8 +17,9 @@
   components:
   - type: Projectile
     damage:
+      armorPenetration: 50
       types:
-        Piercing: 55
+        Piercing: 33
 
 - type: entity
   id: Bullet10x24mmIC
