@@ -65,12 +65,16 @@ namespace Content.Server.Armor
 
         private void OnDamageModify(EntityUid uid, ArmorComponent component, InventoryRelayedEvent<DamageModifyEvent> args)
         {
-            args.Args.Damage = DamageSpecifier.ApplyModifierSet(args.Args.Damage, component.Modifiers);
+            OnDamageModifyDirect(uid, component, args.Args);
         }
 
         private void OnDamageModifyDirect(EntityUid uid, ArmorComponent component, DamageModifyEvent args)
         {
+            Logger.DebugS("armor", $"Armor modifying damage: {args.Damage}");
+
             args.Damage = DamageSpecifier.ApplyModifierSet(args.Damage, component.Modifiers);
+
+            Logger.DebugS("armor", $"Armor modified damage: {args.Damage}");
         }
 
         private void OnArmorVerbExamine(EntityUid uid, ArmorComponent component, GetVerbsEvent<ExamineVerb> args)
