@@ -5,8 +5,29 @@
   minPlayers: 0
   stations:
     Empty:
-      mapNameTemplate: "Empty"
-      overflowJobs:
-        - Passenger
-      availableJobs:
-        Passenger: [ -1, -1 ]
+      stationProto: StandardNanotrasenStation
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: "Empty"
+        - type: StationJobs
+          overflowJobs:
+            - Passenger
+          availableJobs:
+            Passenger: [ -1, -1 ]
+
+- type: gameMap
+  id: Dev
+  mapName: Dev
+  mapPath: /Maps/Test/dev_map.yml
+  minPlayers: 0
+  stations:
+    Dev:
+      stationProto: StandardNanotrasenStation
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: "Dev"
+        - type: StationJobs
+          overflowJobs:
+          - Captain
+          availableJobs:
+            Captain: [ -1, -1 ]
