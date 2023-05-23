@@ -24,6 +24,7 @@ using Robust.Shared.Random;
 using Content.Shared.Inventory;
 using Content.Shared.Hands.Components;
 using Content.Shared.Clothing.Components;
+using Robust.Shared.Timing;
 
 namespace Content.Server.VendingMachines
 {
@@ -387,14 +388,14 @@ namespace Content.Server.VendingMachines
                 _throwingSystem.TryThrow(ent, direction, vendComponent.NonLimitedEjectForce);
             }
             else if (vendComponent.NextEntityToEjectTo != null && vendComponent.EquipOnEject &&
-                EntityManager.TryGetComponent<SharedHandsComponent>(vendComponent.NextEntityToEjectTo, out var hands))
+                EntityManager.TryGetComponent<HandsComponent>(vendComponent.NextEntityToEjectTo, out var hands))
             {
-                var uid = vendComponent.NextEntityToEjectTo;
+                var uidHands = vendComponent.NextEntityToEjectTo;
                 var slot = "";
 
                 if (EntityManager.TryGetComponent<ClothingComponent>(ent, out var clothingComp))
                 {
-                    if (_inventorySystem.TryGetSlots(uid.Value, out var slotDefinitions) && slotDefinitions != null)
+                    if (_inventorySystem.TryGetSlots(uidHands.Value, out var slotDefinitions) && slotDefinitions != null)
                     {
                         foreach (var slotCur in slotDefinitions)
                         {
@@ -403,7 +404,7 @@ namespace Content.Server.VendingMachines
                         }
                     }
                 }
-                _inventorySystem.TryEquip(uid.Value, ent, slot);
+                _inventorySystem.TryEquip(uidHands.Value, ent, slot);
             }
 
             vendComponent.NextItemToEject = null;
