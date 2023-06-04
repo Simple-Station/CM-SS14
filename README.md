@@ -1,4 +1,4 @@
-<p align="center"> <img alt="Space Station 14" width="880" height="300" src="![logo-2560](https://github.com/Park-Station/CM-SS14/assets/81725545/55f12234-d5e4-4b2c-b593-b7468d5ecb5d)" /></p>
+<p align="center"> <img alt="Colonial Marines 14" width="880" height="300" src="https://github.com/Park-Station/CM-SS14/assets/81725545/55f12234-d5e4-4b2c-b593-b7468d5ecb5d" /></p>
 
 Welcome to CM-SS14 a colonial marines inspired remake of the original CM-SS13 running on [Robust Toolbox](https://github.com/space-wizards/RobustToolbox).
 
