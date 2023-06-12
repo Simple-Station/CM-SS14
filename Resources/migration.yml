@@ -52,3 +52,11 @@ BulletAntiMaterial: BulletAntiMateriel
 FoodCondimentBottleSmallHotsauce: FoodCondimentBottleHotsauce
 FoodBakedCookieFortune: FoodSnackCookieFortune
 GunSafeSubMachineGunVector: GunSafeSubMachineGunDrozd
+
+# 2023-06-11
+AirlockMedicalGlass: null
+AirlockScience: null
+AirlockScienceGlass: null
+AlwaysPoweredLightLED: null
+LedLightTube: null
+Poweredlight: null
