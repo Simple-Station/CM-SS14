@@ -14,9 +14,6 @@
     slots:
     - Back
   - type: Wieldable
-  - type: GunWieldBonus
-    minAngle: -20
-    maxAngle: -20
   - type: Gun
     minAngle: 24
     maxAngle: 45
