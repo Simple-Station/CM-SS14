@@ -19,7 +19,7 @@
             "request": "launch",
             "program": "${workspaceFolder}/bin/Content.Server/Content.Server.dll",
             "args": [],
-            "console": "integratedTerminal",
+            "console": "internalConsole",
             "stopAtEntry": false
         },
         {

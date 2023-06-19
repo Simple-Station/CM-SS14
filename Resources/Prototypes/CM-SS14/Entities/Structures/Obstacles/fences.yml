@@ -24,14 +24,15 @@
     bodyType: Static
   - type: Fixtures
     fixtures:
-    - shape:
-        !type:PhysShapeAabb
-        bounds: "-0.3,-0.3,0.3,0.3"
-      mask:
-      - FullTileMask
-      layer:
-      - WallLayer
-      density: 1000
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.3,-0.3,0.3,0.3"
+        mask:
+        - FullTileMask
+        layer:
+        - WallLayer
+        density: 1000
   - type: Repairable
   - type: Damageable
     damageContainer: Inorganic

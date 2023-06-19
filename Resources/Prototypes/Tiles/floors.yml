@@ -971,7 +971,6 @@
     collection: FootstepGrass
   heatCapacity: 10000
   weather: true
-  tileAmbientSound: TileJungleAmbience
 
 - type: tile
   id: FloorDirt
@@ -1111,7 +1110,6 @@
   footstepSounds:
     collection: FootstepAsteroid
   heatCapacity: 10000
-  tileAmbientSound: TileCaveAmbience
 
 - type: tile
   id: FloorCaveDrought
@@ -1125,7 +1123,6 @@
   footstepSounds:
     collection: FootstepAsteroid
   heatCapacity: 10000
-  tileAmbientSound: TileDesertAmbience
 
 - type: tile
   id: FloorFlesh
@@ -1138,6 +1135,7 @@
   canCrowbar: true
   footstepSounds:
     collection: BarestepCarpet
+  itemDrop: FloorTileItemFlesh
   friction: 0.20 #slippy
   heatCapacity: 10000
 
@@ -1181,4 +1179,20 @@
   barestepSounds:
     collection: BarestepWood
   itemDrop: FloorTileItemWoodPattern
+  heatCapacity: 10000
+
+- type: tile
+  id: FloorBrokenWood
+  name: tiles-wood3
+  sprite: /Textures/Tiles/wood_broken.png
+  variants: 7
+  placementVariants: [0, 1, 2, 3, 4, 5, 6]
+  baseTurf: Plating
+  isSubfloor: false
+  canCrowbar: true
+  footstepSounds:
+    collection: FootstepWood
+  barestepSounds:
+    collection: BarestepWood
+  itemDrop: MaterialWoodPlank1
   heatCapacity: 10000

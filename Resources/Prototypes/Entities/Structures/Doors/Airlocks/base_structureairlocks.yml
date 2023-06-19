@@ -14,8 +14,8 @@
           "/Audio/Weapons/smash.ogg"
   - type: InteractionOutline
   - type: Sprite
-    netsync: false
     sprite: Structures/Doors/Airlocks/Standard/celldoor.rsi
+    snapCardinals: true
     layers:
     - state: closed
       map: ["enum.DoorVisualLayers.Base"]
@@ -65,9 +65,10 @@
     containers:
       board: !type:Container
   - type: Weldable
-    fuel: 3
+    fuel: 5
     time: 3
   - type: Airlock
+  - type: DoorBolt
   - type: Appearance
   - type: WiresVisuals
   - type: ApcPowerReceiver
@@ -96,6 +97,8 @@
   - type: DeviceLinkSource
     ports:
       - DoorStatus
+  - type: SoundOnOverload
+  - type: SpawnOnOverload
   - type: UserInterface
     interfaces:
     - key: enum.WiresUiKey.Key

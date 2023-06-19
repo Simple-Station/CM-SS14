@@ -60,7 +60,6 @@
   itemDrop: FloorTileItemGrass
   heatCapacity: 10000
   weather: true
-  tileAmbientSound: TileForestAmbience
 
 # Lava
 - type: tile
