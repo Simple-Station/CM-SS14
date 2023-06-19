@@ -6,332 +6,328 @@
   parent: SimpleSpaceMobBase
   description: They mostly come at night. Mostly.
   components:
-  - type: Insulated
-  - type: DiseaseProtection
-    protection: 1
-  - type: CombatMode
-    disarm: null
-  - type: InputMover
-  - type: MobMover
-  # - type: HTN
-  #   rootTask: XenoCompound
-  #   blackboard:
-  #     NavInteract: !type:Bool
-  #       true
-  #     NavPry: !type:Bool
-  #       true
-  #     NavSmash: !type:Bool
-  #       true
-  - type: Tool
-    speed: 1.5
-    qualities:
-      - Prying
-    useSound:
-      path: /Audio/Items/crowbar.ogg
-  - type: Reactive
-    groups:
-      Flammable: [Touch]
-      Extinguish: [Touch]
-  - type: Faction
-    factions:
-    - Xeno
-  - type: Hands
-  - type: Sprite
-    drawdepth: Mobs
-    sprite: CM-SS14/Mobs/Xenos/Drone/standard.rsi
-    layers:
-    - map: ["enum.DamageStateVisualLayers.Base"]
-      state: walking
-  - type: Physics
-    bodyType: Dynamic
-  - type: Fixtures
-    fixtures:
-    - shape:
-        !type:PhysShapeCircle
-        radius: 0.25
-      density: 1000
-      mask:
-      - MobMask
-      layer:
-      - MobLayer
-  - type: MobState
-    allowedStates:
-      - Alive
-      - Critical
-      - Dead
-  - type: MobThresholds
-    thresholds:
-      0: Alive
-      400: Critical
-      500: Dead
-  - type: Stamina
-    excess: 200
-  - type: Bloodstream
-    bloodReagent: FluorosulfuricAcid
-  - type: MeleeWeapon
-    hidden: true
-    angle: 0
-    soundHit:
-     collection: AlienClaw
-    animation: WeaponArcBite
-    damage:
+    - type: Insulated
+    - type: CombatMode
+      disarm: null
+    - type: InputMover
+    - type: MobMover
+    # - type: HTN
+    #   rootTask: XenoCompound
+    #   blackboard:
+    #     NavInteract: !type:Bool
+    #       true
+    #     NavPry: !type:Bool
+    #       true
+    #     NavSmash: !type:Bool
+    #       true
+    - type: Tool
+      speed: 1.5
+      qualities:
+        - Prying
+      useSound:
+        path: /Audio/Items/crowbar.ogg
+    - type: Reactive
       groups:
-        Brute: 16
-  - type: Appearance
-  - type: DamageStateVisuals
-    rotate: true
-    states:
-      Alive:
-        Base: walking
-      Critical:
-        Base: down
-      Dead:
-        Base: dead
-  - type: Puller
-  - type: Butcherable
-    butcheringType: Spike
-    spawned:
-    - id: FoodMeatXeno
-      amount: 8
-  - type: TypingIndicator
-    proto: alien
-  - type: Temperature
-    heatDamageThreshold: 360
-    coldDamageThreshold: -150
-    currentTemperature: 310.15
-  - type: Tag
-    tags:
-      - CannotSuicide
-      - DoorBumpOpener
-      - FootstepSound
-  - type: NoSlip
-  - type: Perishable #Ummmm the acid kills a lot of the bacteria or something
-    molsPerSecondPerUnitMass: 0.0005
-
+        Flammable: [Touch]
+        Extinguish: [Touch]
+    - type: Faction
+      factions:
+        - Xeno
+    - type: Hands
+    - type: Sprite
+      drawdepth: Mobs
+      sprite: CM-SS14/Mobs/Xenos/Drone/standard.rsi
+      layers:
+        - map: ["enum.DamageStateVisualLayers.Base"]
+          state: walking
+    - type: Physics
+      bodyType: Dynamic
+    - type: Fixtures
+      fixtures:
+        fix1:
+          shape: !type:PhysShapeCircle
+            radius: 0.25
+          density: 1000
+          mask:
+            - MobMask
+          layer:
+            - MobLayer
+    - type: MobState
+      allowedStates:
+        - Alive
+        - Critical
+        - Dead
+    - type: MobThresholds
+      thresholds:
+        0: Alive
+        400: Critical
+        500: Dead
+    - type: Stamina
+      excess: 200
+    - type: Bloodstream
+      bloodReagent: FluorosulfuricAcid
+    - type: MeleeWeapon
+      hidden: true
+      angle: 0
+      soundHit:
+        collection: AlienClaw
+      animation: WeaponArcBite
+      damage:
+        groups:
+          Brute: 16
+    - type: Appearance
+    - type: DamageStateVisuals
+      rotate: true
+      states:
+        Alive:
+          Base: walking
+        Critical:
+          Base: down
+        Dead:
+          Base: dead
+    - type: Puller
+    - type: Butcherable
+      butcheringType: Spike
+      spawned:
+        - id: FoodMeatXeno
+          amount: 8
+    - type: TypingIndicator
+      proto: alien
+    - type: Temperature
+      heatDamageThreshold: 360
+      coldDamageThreshold: -150
+      currentTemperature: 310.15
+    - type: Tag
+      tags:
+        - CannotSuicide
+        - DoorBumpOpener
+        - FootstepSound
+    - type: NoSlip
+    - type: Perishable #Ummmm the acid kills a lot of the bacteria or something
+      molsPerSecondPerUnitMass: 0.0005
 
 - type: entity
   name: Drone
   parent: MobXeno
   id: MobXenoDrone
   components:
-  - type: Sprite
-    drawdepth: Mobs
-    sprite: CM-SS14/Mobs/Xenos/Drone/standard.rsi
-    offset: 0,0.2
-    layers:
-    - map: ["enum.DamageStateVisualLayers.Base"]
-      state: walking
-  - type: MobState
-    allowedStates:
-      - Alive
-      - Critical
-      - Dead
-  - type: MobThresholds
-    thresholds:
-      0: Alive
-      400: Critical
-      500: Dead
-  - type: MeleeWeapon
-    damage:
-      groups:
-        Brute: 16
-  - type: Stamina
-    excess: 200
-  - type: MovementSpeedModifier
-    baseWalkSpeed : 3.0
-    baseSprintSpeed : 5.5
-  - type: Fixtures
-    fixtures:
-    - shape:
-        !type:PhysShapeCircle
-        radius: 0.45
-      density: 450
-      mask:
-      - MobMask
-      layer:
-      - MobLayer
+    - type: Sprite
+      drawdepth: Mobs
+      sprite: CM-SS14/Mobs/Xenos/Drone/standard.rsi
+      offset: 0,0.2
+      layers:
+        - map: ["enum.DamageStateVisualLayers.Base"]
+          state: walking
+    - type: MobState
+      allowedStates:
+        - Alive
+        - Critical
+        - Dead
+    - type: MobThresholds
+      thresholds:
+        0: Alive
+        400: Critical
+        500: Dead
+    - type: MeleeWeapon
+      damage:
+        groups:
+          Brute: 16
+    - type: Stamina
+      excess: 200
+    - type: MovementSpeedModifier
+      baseWalkSpeed: 3.0
+      baseSprintSpeed: 5.5
+    - type: Fixtures
+      fixtures:
+        fix1:
+          shape: !type:PhysShapeCircle
+            radius: 0.45
+          density: 450
+          mask:
+            - MobMask
+          layer:
+            - MobLayer
 
 - type: entity
   name: Defender
   parent: MobXeno
   id: MobXenoDefender
   components:
-  - type: Sprite
-    drawdepth: Mobs
-    sprite: CM-SS14/Mobs/Xenos/Defender/standard.rsi
-    offset: 0,0.2
-    layers:
-    - map: ["enum.DamageStateVisualLayers.Base"]
-      state: walking
-  - type: MobState
-    allowedStates:
-      - Alive
-      - Critical
-      - Dead
-  - type: MobThresholds
-    thresholds:
-      0: Alive
-      400: Critical
-      500: Dead
-  - type: MeleeWeapon
-    damage:
-      groups:
-        Brute: 24
-  - type: Stamina
-    excess: 200
-  - type: MovementSpeedModifier
-    baseWalkSpeed : 3.0
-    baseSprintSpeed : 5.5
-  - type: Fixtures
-    fixtures:
-    - shape:
-        !type:PhysShapeCircle
-        radius: 0.45
-      density: 450
-      mask:
-      - MobMask
-      layer:
-      - MobLayer
+    - type: Sprite
+      drawdepth: Mobs
+      sprite: CM-SS14/Mobs/Xenos/Defender/standard.rsi
+      offset: 0,0.2
+      layers:
+        - map: ["enum.DamageStateVisualLayers.Base"]
+          state: walking
+    - type: MobState
+      allowedStates:
+        - Alive
+        - Critical
+        - Dead
+    - type: MobThresholds
+      thresholds:
+        0: Alive
+        400: Critical
+        500: Dead
+    - type: MeleeWeapon
+      damage:
+        groups:
+          Brute: 24
+    - type: Stamina
+      excess: 200
+    - type: MovementSpeedModifier
+      baseWalkSpeed: 3.0
+      baseSprintSpeed: 5.5
+    - type: Fixtures
+      fixtures:
+        fix1:
+          shape: !type:PhysShapeCircle
+            radius: 0.45
+          density: 450
+          mask:
+            - MobMask
+          layer:
+            - MobLayer
 
 - type: entity
   name: Sentinel
   parent: MobXeno
   id: MobXenoSentinel
   components:
-  - type: Sprite
-    drawdepth: Mobs
-    sprite: CM-SS14/Mobs/Xenos/Sentinel/standard.rsi
-    offset: 0,0.2
-    layers:
-    - map: ["enum.DamageStateVisualLayers.Base"]
-      state: walking
-  - type: MobState
-    allowedStates:
-      - Alive
-      - Critical
-      - Dead
-  - type: MobThresholds
-    thresholds:
-      0: Alive
-      400: Critical
-      500: Dead
-  - type: MeleeWeapon
-    damage:
-      groups:
-        Brute: 8
-  - type: Stamina
-    excess: 200
-  - type: MovementSpeedModifier
-    baseWalkSpeed : 3.0
-    baseSprintSpeed : 5.5
-  - type: Fixtures
-    fixtures:
-    - shape:
-        !type:PhysShapeCircle
-        radius: 0.45
-      density: 450
-      mask:
-      - MobMask
-      layer:
-      - MobLayer
+    - type: Sprite
+      drawdepth: Mobs
+      sprite: CM-SS14/Mobs/Xenos/Sentinel/standard.rsi
+      offset: 0,0.2
+      layers:
+        - map: ["enum.DamageStateVisualLayers.Base"]
+          state: walking
+    - type: MobState
+      allowedStates:
+        - Alive
+        - Critical
+        - Dead
+    - type: MobThresholds
+      thresholds:
+        0: Alive
+        400: Critical
+        500: Dead
+    - type: MeleeWeapon
+      damage:
+        groups:
+          Brute: 8
+    - type: Stamina
+      excess: 200
+    - type: MovementSpeedModifier
+      baseWalkSpeed: 3.0
+      baseSprintSpeed: 5.5
+    - type: Fixtures
+      fixtures:
+        fix1:
+          shape: !type:PhysShapeCircle
+            radius: 0.45
+          density: 450
+          mask:
+            - MobMask
+          layer:
+            - MobLayer
 
 - type: entity
   name: Runner
   parent: MobXeno
   id: MobXenoRunner
   components:
-  - type: Sprite
-    drawdepth: Mobs
-    sprite: CM-SS14/Mobs/Xenos/Runner/standard.rsi
-    offset: 0,0.6
-    layers:
-    - map: ["enum.DamageStateVisualLayers.Base"]
-      state: walking
-  - type: MobState
-    allowedStates:
-      - Alive
-      - Critical
-      - Dead
-  - type: MobThresholds
-    thresholds:
-      0: Alive
-      180: Critical
-      230: Dead
-  - type: MeleeWeapon
-    damage:
-      groups:
-        Brute: 35
-  - type: Stamina
-    excess: 250
-  - type: MovementSpeedModifier
-    baseWalkSpeed : 2.7
-    baseSprintSpeed : 6.0
-  - type: Fixtures
-    fixtures:
-    - shape:
-        !type:PhysShapeCircle
-        radius: 0.32
-      density: 235
-      mask:
-      - MobMask
-      layer:
-      - MobLayer
+    - type: Sprite
+      drawdepth: Mobs
+      sprite: CM-SS14/Mobs/Xenos/Runner/standard.rsi
+      offset: 0,0.6
+      layers:
+        - map: ["enum.DamageStateVisualLayers.Base"]
+          state: walking
+    - type: MobState
+      allowedStates:
+        - Alive
+        - Critical
+        - Dead
+    - type: MobThresholds
+      thresholds:
+        0: Alive
+        180: Critical
+        230: Dead
+    - type: MeleeWeapon
+      damage:
+        groups:
+          Brute: 35
+    - type: Stamina
+      excess: 250
+    - type: MovementSpeedModifier
+      baseWalkSpeed: 2.7
+      baseSprintSpeed: 6.0
+    - type: Fixtures
+      fixtures:
+        fix1:
+          shape: !type:PhysShapeCircle
+            radius: 0.32
+          density: 235
+          mask:
+            - MobMask
+          layer:
+            - MobLayer
 
 - type: entity
   name: Rouny
   parent: MobXenoRunner
   id: MobXenoRouny
   components:
-  - type: Sprite
-    drawdepth: Mobs
-    sprite: Mobs/Aliens/Xenos/rouny.rsi
-    offset: 0,0.6
+    - type: Sprite
+      drawdepth: Mobs
+      sprite: Mobs/Aliens/Xenos/rouny.rsi
+      offset: 0,0.6
 
 - type: entity
   name: Queen
   parent: MobXeno
   id: MobXenoQueen
   components:
-  - type: Sprite
-    drawdepth: Mobs
-    sprite: CM-SS14/Mobs/Xenos/Queen/standard.rsi
-    offset: 0,0.4
-    layers:
-    - map: ["enum.DamageStateVisualLayers.Base"]
-      state: walking
-  - type: MobState
-    allowedStates:
-      - Alive
-      - Critical
-      - Dead
-  - type: MobThresholds
-    thresholds:
-      0: Alive
-      850: Critical
-      1000: Dead
-  - type: MeleeWeapon
-    damage:
-      groups:
-        Brute: 30
-  - type: Stamina
-    excess: 1500
-  - type: MovementSpeedModifier
-    baseWalkSpeed : 2.8
-    baseSprintSpeed : 3.8
-  - type: SlowOnDamage
-    speedModifierThresholds:
-      525: 0.7
-  - type: Fixtures
-    fixtures:
-    - shape:
-        !type:PhysShapeCircle
-        radius: 0.45
-      density: 15500
-      mask:
-      - MobMask
-      layer:
-      - MobLayer
-
+    - type: Sprite
+      drawdepth: Mobs
+      sprite: CM-SS14/Mobs/Xenos/Queen/standard.rsi
+      offset: 0,0.4
+      layers:
+        - map: ["enum.DamageStateVisualLayers.Base"]
+          state: walking
+    - type: MobState
+      allowedStates:
+        - Alive
+        - Critical
+        - Dead
+    - type: MobThresholds
+      thresholds:
+        0: Alive
+        850: Critical
+        1000: Dead
+    - type: MeleeWeapon
+      damage:
+        groups:
+          Brute: 30
+    - type: Stamina
+      excess: 1500
+    - type: MovementSpeedModifier
+      baseWalkSpeed: 2.8
+      baseSprintSpeed: 3.8
+    - type: SlowOnDamage
+      speedModifierThresholds:
+        525: 0.7
+    - type: Fixtures
+      fixtures:
+        fix1:
+          shape: !type:PhysShapeCircle
+            radius: 0.45
+          density: 15500
+          mask:
+            - MobMask
+          layer:
+            - MobLayer
 # - type: entity
 #   name: Praetorian
 #   parent: MobXeno

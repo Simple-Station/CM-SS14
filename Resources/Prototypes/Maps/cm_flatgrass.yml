@@ -15,15 +15,15 @@
             !type:NanotrasenNameGenerator
             prefixCreator: '14'
         - type: StationJobs
-	      overflowJobs:
-	        - Marine
-	      availableJobs:
-	      # Marines
-	        Marine: [ 12, 24 ]
+          overflowJobs:
+            - Marine
+          availableJobs:
+          # Marines
+            Marine: [ 12, 24 ]
 
-	      # Xenos
-	        Drone: [ 8, 12 ]
-	        Runner: [ 2, 4 ]
-	        Sentinel: [ 3, 6 ]
-	        Defender: [ 6, 8 ]
-	        Queen: [ 1, 1 ]
+          # Xenos
+            Drone: [ 8, 12 ]
+            Runner: [ 2, 4 ]
+            Sentinel: [ 3, 6 ]
+            Defender: [ 6, 8 ]
+            Queen: [ 1, 1 ]
