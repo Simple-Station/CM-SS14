@@ -7,7 +7,7 @@
   fallback: true
   stations:
     CM_Flatgrass:
-      stationProto: StandardNanotrasenStation
+      stationProto: CmPlanet
       components:
         - type: StationNameSetup
           mapNameTemplate: '{0} Jungle {1}'

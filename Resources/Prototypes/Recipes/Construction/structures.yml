@@ -653,7 +653,7 @@
   category: construction-category-structures
   description: It opens, it closes, and maybe crushes you.
   icon:
-    sprite: Structures/Doors/Airlocks/Glass/celldoor.rsi
+    sprite: Structures/Doors/Airlocks/Glass/personal_glass.rsi
     state: assembly
   objectType: Structure
   placementMode: SnapgridCenter
