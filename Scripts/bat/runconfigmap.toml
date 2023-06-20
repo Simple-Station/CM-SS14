@@ -97,6 +97,7 @@ tickrate = 30
 port = 1212
 bindto = "::,0.0.0.0"
 pvs = false
+maxupdaterange = 12.5
 
 [status]
 enabled = true

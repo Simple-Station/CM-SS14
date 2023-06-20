@@ -1,0 +1,10 @@
+- type: entity
+  parent: ClothingOuterBase
+  id: ClothingOuterSuitXeno
+  name: xeno suit
+  description: A suit hopefully only resembling a xenomorph...
+  components:
+  - type: Sprite
+    sprite: CM-SS14/Clothing/OuterClothing/Misc/xenosuit.rsi
+  - type: Clothing
+    sprite: CM-SS14/Clothing/OuterClothing/Misc/xenosuit.rsi
