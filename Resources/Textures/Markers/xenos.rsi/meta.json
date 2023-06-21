@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "Modified from various CMSS13 sprites by Pspritechologist.",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "purple"
+    },
+    {
+      "name": "defender"
+    },
+    {
+      "name": "drone"
+    },
+    {
+      "name": "queen"
+    },
+    {
+      "name": "runner"
+    },
+    {
+      "name": "sentinel"
+    }
+  ]
+}

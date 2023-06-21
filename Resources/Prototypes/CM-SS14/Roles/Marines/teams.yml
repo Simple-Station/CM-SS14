@@ -1,0 +1,160 @@
+- type: job
+  id: Marine
+  name: job-name-marine
+  description: job-description-marine
+  playTimeTracker: RoleMarine
+  startingGear: MarineGear
+  icon: "Detective"
+  supervisors: job-supervisors-marine
+  access:
+  - General
+  - Armory
+  # - BravoTeam # Generic Marine, job gets swapped in code.
+
+  # requirements:
+  #   - !type:RoleTimeRequirement
+  #     role: JobWarden
+  #     time: 3600
+  #   - !type:DepartmentTimeRequirement
+  #     department: Security
+  #     time: 18000
+  #   - !type:OverallPlaytimeRequirement
+  #     time: 108000
+  # weight: 10
+
+- type: job
+  id: MarineAlpha
+  setPreference: false
+  name: job-name-marine-alpha
+  description: job-description-marine
+  playTimeTracker: RoleMarine
+  startingGear: MarineGearAlpha
+  icon: "Detective"
+  supervisors: job-supervisors-marine
+  access:
+  - General
+  - Armory
+  - AlphaTeam
+
+- type: job
+  id: MarineBravo
+  setPreference: false
+  name: job-name-marine-bravo
+  description: job-description-marine
+  playTimeTracker: RoleMarine
+  startingGear: MarineGearBravo
+  icon: "Detective"
+  supervisors: job-supervisors-marine
+  access:
+  - General
+  - Armory
+  - BravoTeam
+
+- type: job
+  id: MarineCharlie
+  setPreference: false
+  name: job-name-marine-charlie
+  description: job-description-marine
+  playTimeTracker: RoleMarine
+  startingGear: MarineGearCharlie
+  icon: "Detective"
+  supervisors: job-supervisors-marine
+  access:
+  - General
+  - Armory
+  - CharlieTeam
+
+- type: job
+  id: MarineDelta
+  setPreference: false
+  name: job-name-marine-delta
+  description: job-description-marine
+  playTimeTracker: RoleMarine
+  startingGear: MarineGearDelta
+  icon: "Detective"
+  supervisors: job-supervisors-marine
+  access:
+  - General
+  - Armory
+  - DeltaTeam
+
+
+- type: startingGear
+  id: MarineGear
+  equipment:
+    head: ClothingHeadHatWarden
+    jumpsuit: ClothingUniformJumpsuitWarden
+    back: ClothingBackpackSecurityFilled
+    shoes: ClothingShoesBootsCombatFilled
+    eyes: ClothingEyesGlassesSecurity
+    outerClothing: ClothingOuterCoatWarden
+    id: WardenPDA
+    ears: ClothingHeadsetSecurity
+    belt: ClothingBeltSecurityFilled
+  innerclothingskirt: ClothingUniformJumpskirtWarden
+  satchel: ClothingBackpackSatchelSecurityFilled
+  duffelbag: ClothingBackpackDuffelSecurityFilled
+
+- type: startingGear
+  id: MarineGearAlpha
+  equipment:
+    head: ClothingHeadHatWarden
+    jumpsuit: ClothingUniformJumpsuitWarden
+    back: ClothingBackpackSecurityFilled
+    shoes: ClothingShoesBootsCombatFilled
+    eyes: ClothingEyesGlassesSecurity
+    outerClothing: ClothingOuterCoatWarden
+    id: WardenPDA
+    ears: ClothingHeadsetSecurity
+    belt: ClothingBeltSecurityFilled
+  innerclothingskirt: ClothingUniformJumpskirtWarden
+  satchel: ClothingBackpackSatchelSecurityFilled
+  duffelbag: ClothingBackpackDuffelSecurityFilled
+
+- type: startingGear
+  id: MarineGearBravo
+  equipment:
+    head: ClothingHeadHatWarden
+    jumpsuit: ClothingUniformJumpsuitWarden
+    back: ClothingBackpackSecurityFilled
+    shoes: ClothingShoesBootsCombatFilled
+    eyes: ClothingEyesGlassesSecurity
+    outerClothing: ClothingOuterCoatWarden
+    id: WardenPDA
+    ears: ClothingHeadsetSecurity
+    belt: ClothingBeltSecurityFilled
+  innerclothingskirt: ClothingUniformJumpskirtWarden
+  satchel: ClothingBackpackSatchelSecurityFilled
+  duffelbag: ClothingBackpackDuffelSecurityFilled
+
+- type: startingGear
+  id: MarineGearCharlie
+  equipment:
+    head: ClothingHeadHatWarden
+    jumpsuit: ClothingUniformJumpsuitWarden
+    back: ClothingBackpackSecurityFilled
+    shoes: ClothingShoesBootsCombatFilled
+    eyes: ClothingEyesGlassesSecurity
+    outerClothing: ClothingOuterCoatWarden
+    id: WardenPDA
+    ears: ClothingHeadsetSecurity
+    belt: ClothingBeltSecurityFilled
+  innerclothingskirt: ClothingUniformJumpskirtWarden
+  satchel: ClothingBackpackSatchelSecurityFilled
+  duffelbag: ClothingBackpackDuffelSecurityFilled
+
+- type: startingGear
+  id: MarineGearDelta
+  equipment:
+    head: ClothingHeadHatWarden
+    jumpsuit: ClothingUniformJumpsuitWarden
+    back: ClothingBackpackSecurityFilled
+    shoes: ClothingShoesBootsCombatFilled
+    eyes: ClothingEyesGlassesSecurity
+    outerClothing: ClothingOuterCoatWarden
+    id: WardenPDA
+    ears: ClothingHeadsetSecurity
+    belt: ClothingBeltSecurityFilled
+  innerclothingskirt: ClothingUniformJumpskirtWarden
+  satchel: ClothingBackpackSatchelSecurityFilled
+  duffelbag: ClothingBackpackDuffelSecurityFilled

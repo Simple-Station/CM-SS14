@@ -31,8 +31,8 @@
     layers:
     - state: default
     - state: idpassenger
-  - type: PresetIdCard
-    job: Passenger
+  # - type: PresetIdCard
+  #   job: Passenger
 
 - type: entity
   parent: PassengerIDCard

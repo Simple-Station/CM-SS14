@@ -62,6 +62,8 @@ namespace Content.Server.GameTicking
                 "Overflow role does not have the correct name!");
             InitializeGameRules();
             _initialized = true;
+
+            SubscribeLocalEvent<RoundRestartCleanupEvent>(Reset);
         }
 
         public void PostInitialize()

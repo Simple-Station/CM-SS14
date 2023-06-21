@@ -1,0 +1,14 @@
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadXeno
+  name: xeno head
+  description: A head hopefully only resembling a xenomorph...
+  components:
+  - type: Sprite
+    sprite: CM-SS14/Clothing/Head/Misc/xenosuit.rsi
+  - type: Clothing
+    sprite: CM-SS14/Clothing/Head/Misc/xenosuit.rsi
+  - type: IngestionBlocker
+  - type: Tag
+    tags:
+    - HidesHair

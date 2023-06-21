@@ -1,0 +1,15 @@
+- type: accessLevel
+  id: AlphaTeam
+  name: id-card-access-level-marine-alpha
+
+- type: accessLevel
+  id: BravoTeam
+  name: id-card-access-level-marine-bravo
+
+- type: accessLevel
+  id: CharlieTeam
+  name: id-card-access-level-marine-charlie
+
+- type: accessLevel
+  id: DeltaTeam
+  name: id-card-access-level-marine-delta

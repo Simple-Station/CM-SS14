@@ -1,0 +1,55 @@
+- type: entity
+  abstract: true
+  parent: SpawnPointBase
+  id: SpawnPointMarineBase
+  components:
+  - type: Sprite
+    sprite: Markers/marines.rsi
+
+- type: entity
+  id: SpawnPointMarineAlpha
+  parent: SpawnPointMarineBase
+  name: marineAplha
+  components:
+  - type: SpawnPoint
+    job_id: MarineAlpha
+  - type: Sprite
+    layers:
+      - state: blue
+      - state: qm
+
+- type: entity
+  id: SpawnPointMarineBravo
+  parent: SpawnPointMarineBase
+  name: marineBravo
+  components:
+  - type: SpawnPoint
+    job_id: MarineBravo
+  - type: Sprite
+    layers:
+      - state: blue
+      - state: qm
+
+- type: entity
+  id: SpawnPointMarineCharlie
+  parent: SpawnPointMarineBase
+  name: marineCharlie
+  components:
+  - type: SpawnPoint
+    job_id: MarineCharlie
+  - type: Sprite
+    layers:
+      - state: blue
+      - state: qm
+
+- type: entity
+  id: SpawnPointMarineDelta
+  parent: SpawnPointMarineBase
+  name: marineDelta
+  components:
+  - type: SpawnPoint
+    job_id: MarineDelta
+  - type: Sprite
+    layers:
+      - state: blue
+      - state: qm
