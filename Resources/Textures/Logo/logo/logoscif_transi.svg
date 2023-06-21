@@ -11,7 +11,7 @@
    inkscape:export-xdpi="160.36507"
    inkscape:export-ydpi="160.36507"
    inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20)"
-   sodipodi:docname="logoscifi.svg"
+   sodipodi:docname="logoscif_transi.svg"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
@@ -378,7 +378,7 @@
      id="layer1"
      transform="translate(-9.966836,-119.00519)">
     <rect
-       style="display:inline;fill:#07090e;fill-opacity:1;stroke:none;stroke-width:2.04834;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       style="display:none;fill:#07090e;fill-opacity:1;stroke:none;stroke-width:2.04834;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="rect9294"
        width="190.06633"
        height="58.989639"
@@ -400,9 +400,9 @@
            style="font-style:normal;font-weight:normal;font-size:192px;line-height:1.25;font-family:sans-serif;white-space:pre;shape-inside:url(#rect2578);fill:#224453;fill-opacity:1;stroke:none"><tspan
              x="120.21484"
              y="437.45258"
-             id="tspan18367"><tspan
+             id="tspan18319"><tspan
                style="font-family:Gangga-Free-Font;-inkscape-font-specification:Gangga-Free-Font"
-               id="tspan18365">CMSS</tspan></tspan></text>
+               id="tspan18317">CMSS</tspan></tspan></text>
         <text
            xml:space="preserve"
            transform="matrix(0.26458333,0,0,0.26458333,111.62329,56.074014)"
@@ -410,7 +410,7 @@
            style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:192px;line-height:1.25;font-family:Kogapunk;-inkscape-font-specification:Kogapunk;white-space:pre;shape-inside:url(#rect2578-3);fill:#34213a;fill-opacity:1;stroke:none"><tspan
              x="120.21484"
              y="413.79939"
-             id="tspan18369">1</tspan></text>
+             id="tspan18321">1</tspan></text>
         <text
            xml:space="preserve"
            transform="matrix(0.26458333,0,0,0.26458333,128.0317,56.012002)"
@@ -418,7 +418,7 @@
            style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:192px;line-height:1.25;font-family:Kogapunk;-inkscape-font-specification:Kogapunk;white-space:pre;shape-inside:url(#rect2578-3-6);fill:#34213a;fill-opacity:1;stroke:none"><tspan
              x="120.21484"
              y="413.79939"
-             id="tspan18371">4</tspan></text>
+             id="tspan18323">4</tspan></text>
       </g>
       <path
          style="fill:none;stroke:#5b8bd4;stroke-width:1.28111;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:5.12445, 2.56223, 1.28111, 2.56223;stroke-dashoffset:5.6369;stroke-opacity:1"

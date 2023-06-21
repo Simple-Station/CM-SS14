@@ -26,9 +26,9 @@
      inkscape:pagecheckerboard="1"
      inkscape:document-units="px"
      showgrid="false"
-     inkscape:zoom="0.7071068"
-     inkscape:cx="482.95392"
-     inkscape:cy="327.39043"
+     inkscape:zoom="1"
+     inkscape:cx="558.49999"
+     inkscape:cy="367.49999"
      inkscape:window-width="2560"
      inkscape:window-height="1417"
      inkscape:window-x="1912"
@@ -120,9 +120,9 @@
        style="font-style:normal;font-weight:normal;font-size:192px;line-height:1.25;font-family:sans-serif;white-space:pre;shape-inside:url(#rect2578);fill:#8d7730;fill-opacity:1;stroke:none"><tspan
          x="120.21484"
          y="442.79295"
-         id="tspan134234"><tspan
+         id="tspan8777"><tspan
            style="font-family:'Rumble Tumble Expanded';-inkscape-font-specification:'Rumble Tumble Expanded, '"
-           id="tspan134232">CMSS</tspan></tspan></text>
+           id="tspan8775">CMSS</tspan></tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.47085042,0,0,0.47085042,186.16002,-6.4971255)"
@@ -130,9 +130,9 @@
        style="font-style:normal;font-weight:normal;font-size:192px;line-height:1.25;font-family:sans-serif;white-space:pre;shape-inside:url(#rect2578-3);fill:#7a320b;fill-opacity:1;stroke:none"><tspan
          x="120.21484"
          y="442.79295"
-         id="tspan134238"><tspan
+         id="tspan8781"><tspan
            style="font-family:'Rumble Tumble Expanded';-inkscape-font-specification:'Rumble Tumble Expanded, '"
-           id="tspan134236">1</tspan></tspan></text>
+           id="tspan8779">1</tspan></tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.47085042,0,0,0.47085042,218.88601,-6.4519235)"
@@ -140,7 +140,7 @@
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:192px;line-height:1.25;font-family:'Rumble Tumble Expanded';-inkscape-font-specification:'Rumble Tumble Expanded, ';white-space:pre;shape-inside:url(#rect2578-3-6);fill:#7a320b;fill-opacity:1;stroke:none"><tspan
          x="120.21484"
          y="442.79295"
-         id="tspan134240">4</tspan></text>
+         id="tspan8783">4</tspan></text>
     <path
        style="fill:none;stroke:#0f2142;stroke-width:3.55105;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:14.2042, 7.1021, 3.55105, 7.1021;stroke-dashoffset:1.42042;stroke-opacity:1"
        d="M 20.70175,130.2605 H 337.89858"
@@ -523,14 +523,14 @@
        y="0"><tspan
          x="65.15625"
          y="635.08626"
-         id="tspan134244"><tspan
+         id="tspan8787"><tspan
            style="font-family:Impact;-inkscape-font-specification:Impact;text-align:center;text-anchor:middle"
-           id="tspan134242">CM-SS14 is a Colonial Marines inspired remake of the original CM-SS13 </tspan></tspan><tspan
+           id="tspan8785">CM-SS14 is a Colonial Marines inspired remake of the original CM-SS13 </tspan></tspan><tspan
          x="417.99805"
          y="688.63631"
-         id="tspan134248"><tspan
+         id="tspan8791"><tspan
            style="font-family:Impact;-inkscape-font-specification:Impact;text-align:center;text-anchor:middle"
-           id="tspan134246">running on Robust Toolbox. </tspan></tspan></text>
+           id="tspan8789">running on Robust Toolbox. </tspan></tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,-235.37478,96.251023)"
@@ -538,24 +538,16 @@
        style="font-style:normal;font-weight:normal;font-size:26.6667px;line-height:1.25;font-family:sans-serif;white-space:pre;shape-inside:url(#rect96312);display:inline;fill:#7a320b;fill-opacity:1;stroke:none"
        x="740.20312"
        y="0"><tspan
-         x="1632.3737"
+         x="1686.0196"
          y="621.73853"
-         id="tspan134252"><tspan
+         id="tspan8795"><tspan
            style="font-family:Impact;-inkscape-font-specification:Impact;text-align:end;text-anchor:end"
-           id="tspan134250">CMSS14 is managed by Charcoal Gungan#0531
+           id="tspan8793">CMSS14 is managed by @CharcoalGungan
 </tspan></tspan><tspan
-         x="1439.1443"
+         x="1566.6835"
          y="657.4386"
-         id="tspan134264"><tspan
+         id="tspan8799"><tspan
            style="font-family:Impact;-inkscape-font-specification:Impact;text-align:end;text-anchor:end"
-           id="tspan134254">and </tspan><tspan
-           style="font-family:Impact;-inkscape-font-specification:Impact;text-align:end;text-anchor:end"
-           id="tspan134256">🦆</tspan><tspan
-           style="font-family:Impact;-inkscape-font-specification:Impact;text-align:end;text-anchor:end"
-           id="tspan134258"> Pspritechologist </tspan><tspan
-           style="font-family:Impact;-inkscape-font-specification:Impact;text-align:end;text-anchor:end"
-           id="tspan134260">🦆</tspan><tspan
-           style="font-family:Impact;-inkscape-font-specification:Impact;text-align:end;text-anchor:end"
-           id="tspan134262">#9442 on the SimpleStation Discord.</tspan></tspan></text>
+           id="tspan8797">and @Pspritechologist on the SimpleStation Discord.</tspan></tspan></text>
   </g>
 </svg>
