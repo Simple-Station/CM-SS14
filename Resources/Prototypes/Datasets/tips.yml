@@ -1,6 +1,6 @@
 ﻿- type: dataset
   id: Tips
   values:
-- If you see an alien you need to shoot it (unless you are alien, kill marine)
-- roleplay
-- If you see a marine you need to kill it (unless you are marine, kill alien)
+  - If you see an alien you need to shoot it (unless you are alien, kill marine)
+  - roleplay
+  - If you see a marine you need to kill it (unless you are marine, kill alien)
