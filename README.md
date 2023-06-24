@@ -94,7 +94,7 @@ Refer to [the space wizards guide](https://docs.spacestation14.io/getting-starte
 ### Server:
 >    - [ ] Mapping.
 >        - [ ] Map limiter.
->        - [ ] Xeno cave.
+>        - [x] Xeno cave.
 >        - [ ] Basic on-site medical.
 >        - [ ] Weather system.
 >        - [ ] Telecomms.
@@ -103,7 +103,7 @@ Refer to [the space wizards guide](https://docs.spacestation14.io/getting-starte
 >        - [ ] Round system.
 >        - [ ] Team seperator.
 >        - [ ] Team selector.
->        - [ ] Xeno roles for selection.
+>        - [x] Xeno roles for selection.
 
 ## License
 

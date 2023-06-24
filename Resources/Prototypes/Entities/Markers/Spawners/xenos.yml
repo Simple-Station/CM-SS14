@@ -1,0 +1,67 @@
+- type: entity
+  abstract: true
+  parent: SpawnPointBase
+  id: SpawnPointXenoBase
+  components:
+  - type: Sprite
+    sprite: Markers/xenos.rsi
+
+- type: entity
+  id: SpawnPointXenoDrone
+  parent: SpawnPointXenoBase
+  name: drone
+  components:
+  - type: SpawnPoint
+    job_id: Drone
+  - type: Sprite
+    layers:
+      - state: purple
+      - state: drone
+
+- type: entity
+  id: SpawnPointXenoRunner
+  parent: SpawnPointXenoBase
+  name: runner
+  components:
+  - type: SpawnPoint
+    job_id: Runner
+  - type: Sprite
+    layers:
+      - state: purple
+      - state: runner
+
+- type: entity
+  id: SpawnPointXenoSentinel
+  parent: SpawnPointXenoBase
+  name: sentinel
+  components:
+  - type: SpawnPoint
+    job_id: Sentinel
+  - type: Sprite
+    layers:
+      - state: purple
+      - state: sentinel
+
+- type: entity
+  id: SpawnPointXenoDefender
+  parent: SpawnPointXenoBase
+  name: defender
+  components:
+  - type: SpawnPoint
+    job_id: Defender
+  - type: Sprite
+    layers:
+      - state: purple
+      - state: defender
+
+- type: entity
+  id: SpawnPointXenoQueen
+  parent: SpawnPointXenoBase
+  name: queen
+  components:
+  - type: SpawnPoint
+    job_id: Queen
+  - type: Sprite
+    layers:
+      - state: purple
+      - state: queen
