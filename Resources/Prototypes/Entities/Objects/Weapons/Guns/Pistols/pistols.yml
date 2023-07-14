@@ -19,8 +19,16 @@
     slots:
     - suitStorage
     - Belt
+  - type: Wieldable
+    weildTime: 0.2
   - type: Gun
     fireRate: 6
+    maxAngle: 20 #in degrees
+    minAngle: 3 #in degrees
+    angleIncrease: 5 #in degrees: pistol 5 smg 9 rifle 15
+    minAngleWeildedMultiplier: 1
+    angleIncreaseWeildedMultiplier: 0.33 # the poucentage left of the spray angle gradual spread after the operation
+    recoilStrength: 0.5
     selectedMode: SemiAuto
     availableModes:
       - SemiAuto
@@ -33,8 +41,8 @@
       gun_magazine:
         name: Magazine
         startingItem: MagazinePistol
-        insertSound: /Audio/Weapons/Guns/MagIn/pistol_magin.ogg
-        ejectSound: /Audio/Weapons/Guns/MagOut/pistol_magout.ogg
+        insertSound: /Audio/CM-SS14/Weapons/Guns/MagIn/nsg23_reload.ogg
+        ejectSound: /Audio/CM-SS14/Weapons/Guns/MagOut/nsg23_unload.ogg
         priority: 2
         whitelist:
           tags:
@@ -160,3 +168,66 @@
     - SemiAuto
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/mk58.ogg
+
+
+- type: entity
+  name: M4A3
+  parent: BaseWeaponPistol
+  id: WeaponPistolM4A3
+  description: An M4A3 Service Pistol, once the standard issue sidearm of the Colonial Marines but has recently been replaced with the 88 Mod 4 combat pistol. Uses .35 auto ammo.
+  components:
+  - type: Sprite
+    sprite: CM-SS14/Objects/Weapons/Guns/Pistols/m4a3.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-0
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: Clothing
+    sprite: CM-SS14/Objects/Weapons/Guns/Pistols/m4a3.rsi
+  - type: Gun
+    fireRate: 5
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/mk58.ogg
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: MagazinePistol
+        insertSound: /Audio/CM-SS14/Weapons/Guns/MagIn/nsg23_reload.ogg
+        ejectSound: /Audio/CM-SS14/Weapons/Guns/MagOut/nsg23_unload.ogg
+        priority: 2
+        whitelist:
+          tags:
+            - MagazinePistol
+
+- type: entity
+  name: 88 Mod 4
+  parent: BaseWeaponPistol
+  id: WeaponPistol88M4
+  description: A rapid-fire sidearm issued mainly to company response teams, but also issued to the USCM in small numbers. Uses .35 auto ammo.
+  components:
+  - type: Sprite
+    sprite: CM-SS14/Objects/Weapons/Guns/Pistols/88_mod_4.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-0
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: Clothing
+    sprite: CM-SS14/Objects/Weapons/Guns/Pistols/88_mod_4.rsi
+  - type: Gun
+    fireRate: 5
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/mk58.ogg
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: MagazinePistol
+        insertSound: /Audio/CM-SS14/Weapons/Guns/MagIn/nsg23_reload.ogg
+        ejectSound: /Audio/CM-SS14/Weapons/Guns/MagOut/nsg23_unload.ogg
+        priority: 2
+        whitelist:
+          tags:
+            - MagazinePistol

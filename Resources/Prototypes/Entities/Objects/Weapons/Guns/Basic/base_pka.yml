@@ -8,9 +8,6 @@
   - type: Item
     sprite: Objects/Weapons/Guns/Basic/kinetic_accelerator.rsi
     size: 30
-  - type: GunWieldBonus
-    minAngle: -43
-    maxAngle: -43
   - type: Wieldable
     wieldedInhandPrefix: null
   - type: Gun

@@ -283,6 +283,9 @@
       drawdepth: Mobs
       sprite: Mobs/Aliens/Xenos/rouny.rsi
       offset: 0,0.6
+      layers:
+        - map: ["enum.DamageStateVisualLayers.Base"]
+          state: running
 
 - type: entity
   name: Queen

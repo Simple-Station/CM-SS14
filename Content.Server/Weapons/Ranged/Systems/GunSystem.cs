@@ -6,6 +6,7 @@ using Content.Server.Interaction;
 using Content.Server.Power.EntitySystems;
 using Content.Server.Stunnable;
 using Content.Server.Weapons.Ranged.Components;
+using Content.Shared.Wieldable.Components;
 using Content.Shared.Damage;
 using Content.Shared.Damage.Systems;
 using Content.Shared.Database;
@@ -329,7 +330,19 @@ public sealed partial class GunSystem : SharedGunSystem
     private Angle GetRecoilAngle(TimeSpan curTime, GunComponent component, Angle direction)
     {
         var timeSinceLastFire = (curTime - component.LastFire).TotalSeconds;
-        var newTheta = MathHelper.Clamp(component.CurrentAngle.Theta + component.AngleIncrease.Theta - component.AngleDecay.Theta * timeSinceLastFire, component.MinAngle.Theta, component.MaxAngle.Theta);
+
+        var minAngleMod = component.MinAngle;
+        var angleIncreaseMod = component.AngleIncrease;
+
+        if (EntityManager.TryGetComponent<WieldableComponent>(component.Owner, out var wieldable) && wieldable.Wielded)
+        {
+            minAngleMod *= component.MinAngleWeildedMultiplier;
+            angleIncreaseMod *= component.AngleIncreaseWeildedMultiplier;
+        }
+
+        var newTheta = MathHelper.Clamp(component.CurrentAngle.Theta + angleIncreaseMod.Theta - component.AngleDecay.Theta *
+            timeSinceLastFire, minAngleMod.Theta, component.MaxAngle.Theta);
+
         component.CurrentAngle = new Angle(newTheta);
         component.LastFire = component.NextFire;
 

@@ -1,0 +1,83 @@
+# Empty mags
+- type: entity
+  id: BaseMagazineM41A
+  name: "m41a magazine (10x24mm rifle)"
+  parent: BaseItem
+  abstract: true
+  components:
+    - type: Tag
+      tags:
+        - MagazineM41A
+    - type: Item
+      size: 5
+    - type: BallisticAmmoProvider
+      mayTransfer: true
+      whitelist:
+        tags:
+          - Cartridge10x24mm
+      capacity: 40
+    - type: ContainerContainer
+      containers:
+        ballistic-ammo: !type:Container
+    - type: Sprite
+      netsync: false
+      sprite: CM-SS14/Objects/Weapons/Guns/Ammunition/Magazine/Rifle/m41a.rsi
+      layers:
+        - state: base
+          map: ["enum.GunVisualLayers.Base"]
+        - state: magstd-1
+          map: ["enum.GunVisualLayers.Mag"]
+    - type: MagazineVisuals
+      magState: magstd
+      steps: 2
+      zeroVisible: false
+    - type: Appearance
+
+# Magazines
+- type: entity
+  id: MagazineM41A
+  name: "m41a magazine (10x24mm rifle)"
+  parent: BaseMagazineM41A
+  components:
+    - type: BallisticAmmoProvider
+      proto: Cartridge10x24mm
+    - type: Sprite
+      layers:
+        - state: base
+          map: ["enum.GunVisualLayers.Base"]
+        - state: magstd-1
+          map: ["enum.GunVisualLayers.Mag"]
+    - type: MagazineVisuals
+      magState: magstd
+
+- type: entity
+  id: MagazineM41A-AP
+  name: "m41a magazine (10x24mm rifle armor-piercing)"
+  parent: BaseMagazineM41A
+  components:
+    - type: BallisticAmmoProvider
+      proto: Cartridge10x24mmAP
+    - type: Sprite
+      layers:
+        - state: armor_peircing
+          map: ["enum.GunVisualLayers.Base"]
+        - state: magap-1
+          map: ["enum.GunVisualLayers.Mag"]
+    - type: MagazineVisuals
+      magState: magap
+
+- type: entity
+  id: MagazineM41A-Incendiary
+  name: "m41a magazine (10x24mm rifle incendiary)"
+  parent: BaseMagazineM41A
+  components:
+    - type: BallisticAmmoProvider
+      proto: Cartridge10x24mmIncendiary
+    - type: Sprite
+      layers:
+        - state: incendiary
+          map: ["enum.GunVisualLayers.Base"]
+        - state: magic-1
+          map: ["enum.GunVisualLayers.Mag"]
+    - type: MagazineVisuals
+      magState: magic

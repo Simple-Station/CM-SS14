@@ -18,8 +18,16 @@
     slots:
     - Back
     - suitStorage
+  - type: Wieldable
+    weildTime: 0.5
   - type: AmmoCounter
   - type: Gun
+    maxAngle: 5 #in degrees
+    minAngle: 5 #in degrees
+    angleIncrease: 2 #in degrees: pistol 5 smg 9 rifle 15
+    minAngleWeildedMultiplier: 1
+    angleIncreaseWeildedMultiplier: 0.33 # the poucentage left of the spray angle gradual spread after the operation
+    recoilStrength: 2.5
     fireRate: 2
     selectedMode: SemiAuto
     availableModes:
@@ -206,3 +214,32 @@
     fireRate: 2
   - type: BallisticAmmoProvider
     capacity: 1
+
+- type: entity
+  name: M37A2 pump shotgun
+  parent: BaseWeaponShotgun
+  id: WeaponShotgunM37A2
+  description: An Armat Battlefield Systems Shotgun utilized by USCM Marines. Uses .50 shotgun shells.
+  components:
+  - type: Sprite
+    sprite: CM-SS14/Objects/Weapons/Guns/Shotguns/M37A2.rsi
+  - type: Clothing
+    sprite: CM-SS14/Objects/Weapons/Guns/Shotguns/M37A2.rsi
+  - type: Gun
+    fireRate: 2
+    selectedMode: SemiAuto
+    availableModes:
+    - SemiAuto
+    soundGunshot:
+      path: /Audio/CM-SS14/Weapons/Guns/Gunshots/gun_shotgun_tactical_1.ogg
+    soundEmpty:
+      path: /Audio/Weapons/Guns/Empty/empty.ogg
+  - type: BallisticAmmoProvider
+    autoCycle: true
+    whitelist:
+      tags:
+      - ShellShotgun
+    capacity: 7
+    proto: ShellShotgun
+    soundInsert:
+      path: /Audio/CM-SS14/Weapons/Guns/MagIn/gun_shotgun_shell_insert.ogg

@@ -14,9 +14,16 @@
     slots:
     - Back
     - suitStorage
+  - type: Wieldable
+    weildTime: 0.5
   - type: AmmoCounter
   - type: Gun
     fireRate: 5
+    maxAngle: 60 #in degrees
+    minAngle: 25 #in degrees
+    angleIncrease: 15 #in degrees
+    minAngleWeildedMultiplier: 0.1 # 0.1 (10%) is the amount of the minAngle left after the operation
+    angleIncreaseWeildedMultiplier: 0.005 # the poucentage left of the spray angle gradual spread after the operation
     selectedMode: FullAuto
     availableModes:
       - FullAuto
@@ -24,6 +31,7 @@
       path: /Audio/Weapons/Guns/Gunshots/batrifle.ogg
   - type: ChamberMagazineAmmoProvider
   - type: ItemSlots
+    ejectOnUse: false
     slots:
       gun_magazine:
         name: Magazine
@@ -173,6 +181,59 @@
         whitelist:
           tags:
             - CartridgeRifle
+  - type: ContainerContainer
+    containers:
+      gun_magazine: !type:ContainerSlot
+      gun_chamber: !type:ContainerSlot
+  - type: MagazineVisuals
+    magState: mag
+    steps: 1
+    zeroVisible: true
+  - type: Appearance
+
+- type: entity
+  name: M41A-MK2
+  parent: BaseWeaponRifle
+  id: WeaponRifleM41A
+  description: Standard issue combat rifle utilized by the United States Colonial Marine Corps. Uses 10x24mm rifle ammo.
+  components:
+  - type: Sprite
+    sprite: CM-SS14/Objects/Weapons/Guns/Rifles/M41A_MK2_jungle.rsi
+    layers:
+      - state: base
+        map: ["enum.GunVisualLayers.Base"]
+      - state: mag-0
+        map: ["enum.GunVisualLayers.Mag"]
+      - state: mag-unshaded-0
+        map: ["enum.GunVisualLayers.MagUnshaded"]
+        shader: unshaded
+  - type: Clothing
+    sprite: CM-SS14/Objects/Weapons/Guns/Rifles/M41A_MK2_jungle.rsi
+  - type: Gun
+    fireRate: 20
+    selectedMode: Burst
+    availableModes:
+      - Burst
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/ltrifle.ogg
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: MagazineM41A
+        insertSound: /Audio/CM-SS14/Weapons/Guns/MagIn/m41_reload.ogg
+        ejectSound: /Audio/CM-SS14/Weapons/Guns/MagOut/m41_unload.ogg
+        priority: 2
+        whitelist:
+          tags:
+            - MagazineM41A
+      gun_chamber:
+        name: Chamber
+        startingItem: Cartridge10x24mm
+        priority: 1
+        whitelist:
+          tags:
+            - Cartridge10x24mm
   - type: ContainerContainer
     containers:
       gun_magazine: !type:ContainerSlot

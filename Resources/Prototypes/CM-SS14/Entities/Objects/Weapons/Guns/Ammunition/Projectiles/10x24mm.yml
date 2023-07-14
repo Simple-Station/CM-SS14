@@ -1,0 +1,35 @@
+- type: entity
+  id: Bullet10x24mm
+  name: bullet (10x24mm rifle)
+  parent: BaseBullet
+  noSpawn: true
+  components:
+  - type: Projectile
+    damage:
+      types:
+        Piercing: 44
+
+- type: entity
+  id: Bullet10x24mmAP
+  name: bullet (10x24mm rifle armor-piercing)
+  parent: BaseBullet
+  noSpawn: true
+  components:
+  - type: Projectile
+    damage:
+      armorPenetration: 50
+      types:
+        Piercing: 33
+
+- type: entity
+  id: Bullet10x24mmIC
+  name: bullet (10x24mm rifle incendiary)
+  parent: BaseBullet
+  noSpawn: true
+  components:
+  - type: Projectile
+    damage:
+      types:
+        Piercing: 33
+  - type: IgniteOnCollide
+    fireStacks: 1

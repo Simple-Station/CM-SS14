@@ -32,4 +32,10 @@ public sealed partial class WieldableComponent : Component
 
     [DataField("wieldTime")]
     public float WieldTime = 1.5f;
+
+    [DataField("walkMod"), ViewVariables(VVAccess.ReadWrite)]
+    public float WalkMod = 1f;
+
+    [DataField("sprintMod"), ViewVariables(VVAccess.ReadWrite)]
+    public float SprintMod = 1f;
 }

@@ -48,6 +48,8 @@
     sprintModifier: 0.65
   - type: Armor
     modifiers:
+      flatReductions:
+        Brute: 50
       coefficients:
         Blunt: 0.9
         Slash: 0.9

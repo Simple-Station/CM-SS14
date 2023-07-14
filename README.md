@@ -49,13 +49,15 @@ Refer to [the space wizards guide](https://docs.spacestation14.io/getting-starte
 ### Combat:
 >    - [ ] Finish basic weaponry.
 >        - [X] Rifle.
->        - [ ] Pistol.
->        - [ ] Shotgun.
->        - [ ] SMG.
+>        - [X] Pistol.
+>        - [X] Shotgun.
+>        - [X] SMG.
 >        - [ ] Flamethrower.
->        - [ ] Sniper?
+>        - [X] Sniper? (shid)
 >        - [ ] Mounted weapon.
 >        - [ ] Grenades.
+
+>    - [ ] Finish basic ammo.
 
 >    - [ ] Custom armor.
 >        - [ ] Leightweight, medium, and heavy armor.

@@ -108,15 +108,28 @@ namespace Content.Shared.Damage
             // more cause they're just bloody stumps.
             DamageSpecifier newDamage = new(damageSpec);
 
+            float ap = (float) (damageSpec.DamageDict.TryGetValue("AP", out var apValue) ? apValue : 0f);
+
+            if (modifierSet.FlatReduction.TryGetValue("AP", out var apReduct))
+                ap = Math.Max(ap - apReduct, 0);
+
             foreach (var entry in newDamage.DamageDict)
             {
                 if (entry.Value <= 0) continue;
+
+                if (entry.Key == "AP") continue; // Don't want to reduce armor penetration with armor :P
 
                 float newValue = entry.Value.Float();
 
                 if (modifierSet.FlatReduction.TryGetValue(entry.Key, out var reduction))
                 {
+                    Logger.DebugS("damage", $"Flat reduction of {reduction} for {entry.Key}.");
+                    // armor penetration reduces flat reductions
+                    reduction = Math.Max(reduction - ap, 0);
+                    // Logger.DebugS("damage", $"Armor penetration is {newDamage.DamageDict["AP"]}.");
+                    Logger.DebugS("damage", $"Reducing by {reduction}.");
                     newValue -= reduction;
+                    Logger.DebugS("damage", $"New value is {newValue}.");
                     if (newValue <= 0)
                     {
                         // flat reductions cannot heal you
@@ -190,7 +203,7 @@ namespace Content.Shared.Damage
         {
             foreach (var (key, value) in DamageDict)
             {
-                if (value < minValue)
+                if (value < minValue && key != "AP")
                 {
                     DamageDict[key] = minValue;
                 }
@@ -205,7 +218,7 @@ namespace Content.Shared.Damage
         {
             foreach (var (key, value) in DamageDict)
             {
-                if (value > maxValue)
+                if (value > maxValue && key != "AP")
                 {
                     DamageDict[key] = maxValue;
                 }
@@ -227,6 +240,10 @@ namespace Content.Shared.Damage
                 if (DamageDict.ContainsKey(type))
                 {
                     DamageDict[type] += value;
+                }
+                else if (type == "AP")
+                {
+                    DamageDict.Add(type, value);
                 }
             }
         }
