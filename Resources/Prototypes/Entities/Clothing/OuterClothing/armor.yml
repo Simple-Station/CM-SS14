@@ -62,9 +62,7 @@
   description: A heavily armored suit that protects against excessive damage.
   components:
   - type: Sprite
-    sprite: Clothing/OuterClothing/Armor/heavy.rsi
   - type: Clothing
-    sprite: Clothing/OuterClothing/Armor/heavy.rsi
   - type: Armor
     modifiers:
       coefficients:
@@ -209,7 +207,7 @@
         Radiation: 0.8
   - type: ClothingSpeedModifier
     walkModifier: 0.7
-    sprintModifier: 0.65 
+    sprintModifier: 0.65
   - type: ExplosionResistance
     damageCoefficient: 0.5
   - type: GroupExamine
